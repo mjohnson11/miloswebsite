@@ -82,7 +82,7 @@
               <li>They can generally divide about once every 90 minutes (though this is different for different strains), so we can dilute them 1/1024 each day and they can divide 10 times to get back (2^10=1024) to their starting density.</li>
               <li>They are really good at repairing their DNA using pieces of similar DNA by homologous recombination. This means that if we put a piece of DNA into the cell that lines up with a part of the genome, it will sometimes (very rarely, but still commonly enough to be useful) replace that part of the genome. (Click on the picture to look through the slideshow-graphic below).</li>
               <div class="m_slideshow slideholder" num_slides="2" base="slideshows/Transformation/" suffix="Transformation.svg">
-                <img class="m_slide" src="slideshows/Transformation/1Transformation.svg">
+                <img class="m_slide" alt="hand-drawn slideshow depicting transformation and homologous recombination in yeast" src="slideshows/Transformation/1Transformation.svg">
                 <div class="m_controls"></div>
               </div>
               <li>They smell better than bacteria (OK this isn’t that important, just sayin).</li>
@@ -91,7 +91,7 @@
               Alright so we want to put a lot of mutations into a lot of yeast strains. To make mutations, we used a plasmid-based transposon insertion library that other scientists made years ago (<a href="https://sites.lsa.umich.edu/kumar-lab/functional-genomics-in-yeast-using-transposon-insertion-libraries/" target="_blank">protocol</a>, <a href="https://genome.cshlp.org/content/14/10a/1975" target="_blank">paper</a>). These plasmids have a backbone, a section of the yeast genome, and a transposon that interrupts that section. What I did is take this existing library, sample a smaller set of plasmids from it (which correspond to a set of insertion locations in the yeast genome), and add random DNA barcodes into the inside of the transposon. 
             </p>
             <div class="slideholder">
-              <img class="m_slide" src="slideshows/Plasmid.svg">
+              <img class="m_slide" alt="drawing of the plasmid used in thiis experiment, showing DNA Barcode inside a Tn7 transposon, inside a section of yeast DNA, connected with a backbone" src="slideshows/Plasmid.svg">
             </div>
             <p>
               These barcodes identify each different insertion/mutation uniquely, and when I put them into yeast later, I can track the frequencies of barcodes by sequencing. In order to make these barcoded libraries, I came up with / improved a few fun methods that you can read more about if you’re into that kind of thing (NOTE: I'm serious, don't click if you don't care! My personal bad habit is to click anything I can click, but the idea is for these dropdowns to be super-optional, so if you don't care about sequencing transposon edges etc. resist the urge to click!)
@@ -102,7 +102,7 @@
               <div class='drill_content'>
                 <p>In order to identify particular insertions in yeast genomic DNA in our plasmid libraries, we need to sequence from a <i>known</i> region, the inside of the transposon, into an <i>unknown</i> region, the yeast genome outside the transposon. This is tricky because we don't have a PCR primer that will magically work for the unknown region. People have invented a few different ways to deal with this problem, including a neat trick with a restriction enzyme that works on one type of transposon edge (<i>Mme</i>1, see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3842022/" target="_blank">this</a> paper), but we used a different method: one that uses ... you guessed it - another transposon! This engineered transposon, or "tagmentase," randomly inserts into our plasmids. Some fraction of the time, it inserts near the transposon edge, and we can do a pcr between the transposon in the plasmid and the one we just inserted, reading the yeast genomic DNA in between. This process has been used for whole genome sequencing for a while, but there are only a few papers describing doing it for this kind of edge-sequencing (<a href="https://www.biorxiv.org/content/10.1101/037762v5" target="_blank">this "TagMap" paper</a> describes the method well, BUT we were also able to make it work using the commercially available Tn5, which might be easier for many labs!). </p>
                 <div class="m_slideshow slideholder" num_slides=6 base="slideshows/Tagmap/" suffix="Tagmap.svg">
-                  <img class="m_slide" src="slideshows/TagMap/1TagMap.svg">
+                  <img class="m_slide" alt="drawn slideshow depicting the TagMap method" src="slideshows/TagMap/1TagMap.svg">
                   <div class="m_controls"></div>
                 </div>
                 <div class='drill_closer'>close</div>
@@ -114,7 +114,7 @@
               <div class='drill_content'>
                 <p>In order to build the plasmid libraries we used in this project, we needed to isolate and identify a ton of individual plasmids (identify which section of the yeast genome is inside the plasmid and where the transposon insertion is in that section of yeast genome). To do that without having to sequence hundreds or thousands of plasmid-bearing strains individually, we use a nifty trick called "coordinate sequencing", where we sequence pools of plasmids from rows, columns, plate-rows, and plate-columns of a set of 96 well plates. We pool and sequence everything in row A of all plates, Row B or all plates, etc., we pool and sequence everything in column 1 of all plates, column 2 of all plates, etc., and then we make pools of all wells of each plate ("plate pools") and arrange these pools in a grid as well, so we can pool and sequence everything from row A etc. and column 1 etc. of this grid. Then when we get all the sequencing results back, if we see a particular insertion in the yeast genome (I call these "edges" since they are the nucleotides next to the transposon edge) in the Row A pool, Column 2 pool, plate-row B, and plate-column 1, we know that plasmid is in plate 2, well A2 (two papers that describe this method:<a href="https://www.ncbi.nlm.nih.gov/pubmed/25960123" target="_blank">1</a>, <a href="https://www.nature.com/articles/nprot.2017.073" target="_blank">2</a>, <a href="https://www.biorxiv.org/content/10.1101/044768v2" target="_blank">preprint</a>)</p>
                 <div class="m_slideshow slideholder" num_slides="6" base="slideshows/CS/" suffix="CS.svg">
-                  <img class="m_slide" src="slideshows/CS/1CS.svg">
+                  <img class="m_slide" alt="drawing showing how cartesian-coordinate sequencing works" src="slideshows/CS/1CS.svg">
                   <div class="m_controls"></div>
                 </div>
                 <div class='drill_closer'>close</div>
@@ -148,9 +148,9 @@
             <h4>1. It is hard being fit.</h4>   
             <p>If we look at the <i>distribution</i> of fitness effects of all the mutations, strains that start out better (that are more fit, that grow faster), have worse options - the drawing below shows the basic features of this distribution of fitness effects, and the graph shows a real distribution from one strain in the experiment - you can move the slider at the bottom to see how the distribution changes as you scroll through the list of strains, which are sorted from least fit to most fit. Each individual distribution is a little noisy, but you should be able to see the mean, indicated by a red line, shift to the left as you slide towards more fit strains.</p>
             <div id="dfe_div_holder">
-              <img id="dfe_whiteboard" src="slideshows/DFE.svg">
+              <img id="dfe_whiteboard" alt="drawing of a distribution of fitness effects" src="slideshows/DFE.svg">
               <div id="dfe_div">
-                <img id="dfe_graph" src="data/dfe_pngs/dfe1.png">
+                <img id="dfe_graph" alt="interactive graph of a real distribution of fitness effects from the data for one strain; the slider below let's you scroll from less fit to more fit strains, and you can see the distribution shifts more deleterious for more fit strains" src="data/dfe_pngs/dfe1.png">
                 <input id="dfe_slider" type="range" min="1" max="81" value="1" oninput="update_dfe_graph(this.value)">
                 <p id="least_fit">Least fit segregant</p>
                 <p id="most_fit">Most fit segregant</p>
@@ -160,7 +160,7 @@
             <h4>2. For individual mutations, there are a ton of different patterns of interactions (epistasis)!</h4> 
             <p>In the plots below, each point represents the fitness effect of a particular mutation in one strain. Its x-axis value represents the starting fitness of that strain (how well it grows to begin with), and its y-axis value represents the fitness effect of the mutation (positive values mean it is beneficial, negative means deleterious). Click through the slideshow below to see graphics of some of the patterns of epistasis we observe, such as diminishing returns (when a mutation is <i>less beneficial in strains that start out more fit</i>) and increasing costs (when a mutation is <i>more deleterious in strains that start out more fit</i>)</p>
             <div class="m_slideshow slideholder" num_slides="6" base="slideshows/Epistasis/" suffix="Epistasis.svg">
-              <img class="m_slide" src="slideshows/Epistasis/1Epistasis.svg">
+              <img class="m_slide" alt="drawn slideshow showing examples of what the different types of epistasis (discussed above and below) look like in graphed data" src="slideshows/Epistasis/1Epistasis.svg">
               <div class="m_controls"></div>
             </div>
             <p>Below is a data browser where data for each insertion mutation is shown in a separate graph, sorted by variance in fitness effect.</p>
@@ -172,7 +172,7 @@
             </ul>
             <div class='drill_down'>
               <p class='drill_title' onclick="load_idv()">Interactive data browser (click to expand, may take a while to load/run)</p>
-              <div class='drill_content' id="idv">
+              <div class='drill_content' alt="An interactive data browser with fitness effect data for each mutation across all the strains. Clicking on one panel hihglights that graph and gives information on the particular mutation." id="idv">
               </div>
             </div>
             <p>
