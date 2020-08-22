@@ -492,7 +492,7 @@ there.
 
 .drill_down {
   width:auto;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.075);
   border-radius: 10px;
   margin: 0px auto;
   margin-left: -30px;
