@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Figure 80 - PCA exploration</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet" type="text/css">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/milo_skeleton.css">
+  <link rel="stylesheet" href="../learning.css">
+  <link rel="stylesheet" href="pca.css">
+  
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="../../d3/d3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../../js/setup_elements.js"></script>
+  <script src="../setup_matrices.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/svg+xml" href="../../Favicon.svg">
+
+</head>
+<body onload="setup_matrices()">
+  <p id="home_link"><a href="../../">FIGURE 80</a></p>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="title_zone">
+          <h2>PCA (Probably Confusing Aggggghhghg)</h2>
+          <div class="title_underline"></div>
+          <p><b>Trying to gain some intuition about how and why PCA works, and how to look at the results</b></p>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>THE LINEAR ALGEBRA BASIS OF PCA</i></u></h3>
+            <p><i>Explaining how and why this thing works</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+                BLAH BLAH BLAH
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+            <div class="drill_title">
+              <h3 class="m_subhead"><u><i>PCA Exploration</i></u></h3>
+              <p><i>Poking around in the primary components</i></p>
+            </div>
+            <div class='drill_content'>
+              
+              <p>
+                  BLAH BLAH BLAH
+              </p>
+              <div class='drill_closer'>close</div>
+            </div>
+          </div>
+          <div id='pca'>
+            <div class='matrix' id='C_mat' rows=4 cols=4></div>
+            <div class='matrix' id='xformed_mat' rows=2 cols=3></div>
+            <div class='matrix' id='big_mat' rows=10 cols=5></div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

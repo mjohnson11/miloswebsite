@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Figure 80</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/milo_skeleton.css">
+
+    <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="d3/d3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/setup_elements.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/svg+xml" href="Favicon.svg">
+
+</head>
+<body onload="setup_all()">
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns" style="margin-top: 5%">
+        <h1 style="letter-spacing:1rem">FIGURE 80</h1>
+        <p>Some science communication experiments</p>
+        <h3><i>THE IDEA</i></h3>
+        <p>
+          When I read papers, there are three things I want that I usually don't have. The first is to be talking to the author at a poster rather than sitting squinting at an overly bright screen where they have committed their work to an inflexible number of written words. The second is the ability to quickly and easily dive into their data, from abstract summary statistics and finalized figures to the raw data beneath. The third is a snack (and OK to be honest I usually do have a snack). This science communication project is intended to help with the first two items, and to serve as a place for more science communication experimentation in the future.
+        </p>
+        <p>Click here to <a href="stories/interaction_action/">read the first science story!</a> Or continue below to learn more about the underlying ideas.</p>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>CLICKABLE DEPTH</i></u></h3>
+            <p><i>Pierre's Law: Most people don't care about most things</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+              If I'm talking to a person about a project at a poster, they can tell me story of their project in 5-10 min. For most audiences, this is plenty. If I am particularly interested in one method they used or in a particular result I can ask follow up questions and dive deeper quickly, maybe on a whiteboard. For me, this is a better experience than reading a paper. <br /><br />
+              The idea here is to include individual sections and more detailed discussions as drill-down clickable links, so that most readers can get the overall picture quickly but the small percentage of readers who care about methods details can dive deeper (and link to technical papers or other resources when appropriate)
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>PRINCIPLES / TECHNIQUES</i></u></h3>
+            <p><i>What are we gonna try to do to keep people interested?</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>Right now I'm trying to use three methods to make the presentation of scientific ideas a little better:</p>
+            <ol>
+              <li>Write a short story in the conversational language of a poster session, with fun hooks, wild speculation, and clearly marked take-aways</li>
+              <li>Provide graphical explanations through simple slideshows of simple whiteboard-style drawings</li>
+              <div class="m_slideshow slideholder" num_slides="3" base="frontpage_slideshow/" suffix="SlideIntro.svg">
+                <img class="m_slide" style="max-width:300px;" src="frontpage_slideshow/1SlideIntro.svg">
+                <div class="m_controls" style="max-width:300px;" ></div>
+              </div>
+              <li>Make simple data browsers that allow data exploration and connections between abstract and raw data</li>
+            </ol>
+            <p>
+              Many figures these days display data that comes from a ton of processing and analysis of high-throughput raw data. For scientists in the field, looking at more raw versions of the data is really, really useful for gaining intuition about experimental pitfalls, sources of noise, and how the analysis works. So a goal of this project is to present data and results in the most accessible formats possible: an interactive browser and a commented code notebook on binder.
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>TARGET AUDIENCE</i></u></h3>
+            <p><i>Designed by me for ... you?</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+              The target audience of this project is not the public - it is scientists, both within the field and in related fields, though I hope that by simplifying communications between scientists they will also become more accessible to science journalists and non-scientists who are really into this stuff.
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>ABOUT / CONTACT</i></u></h3>
+            <p><i>I demand to know who is responsible for this</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+              My name is Milo Johnson and I am a graduate student in Michael Desai's Lab at Harvard.<br />
+              As of now I have only written this one story, but I am hoping to try new experiments in science communication (e.g. choose your own adventure w/ short videos). If you're interested in collaborating on this kind of work please contact me! Also, more generally, I would love feedback on this idea and the first story: milo.s.johnson.13@gmail.com.
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

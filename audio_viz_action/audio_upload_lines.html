@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel='stylesheet' href='client/audio_action.css'>
+  </head>
+  <body>
+    <div id='vid_action_container'>
+      <p1 id='song_title_text'></p1>
+      <button id='play_local' onclick='file_reader("local")'>just play something</button>
+      <input type="file" id="file_input" onchange="file_reader('file')"/>
+      <audio id="sound" controls></audio>
+      <div id='svg_div'></div>
+    </div>
+  </body>
+  <script src="//d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.js" charset="utf-8"></script>
+  <script src='client/line_draw_file_input.js'></script>
+</html>

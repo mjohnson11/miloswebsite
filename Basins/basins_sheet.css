@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* CSS Document */ 
+
+#state_div {
+	position:relative;
+	width:800px;
+	height:620px;
+	margin: 0px auto;
+}
+
+#state {
+    position:absolute;
+    width:800px;
+    height:620px;
+    margin:0px auto;
+}
+
+#volume_meter {
+    position:relative;
+    background-color:green;
+    width:20px;
+    height:30px;
+    margin: 0px auto;
+}
+
+#pixel_canvas {
+    position:relative;
+    margin:0px auto;
+    width:600px;
+    height:600px;
+    
+    
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;          
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;            
+    image-rendering: pixelated;                 
+    -ms-interpolation-mode: nearest-neighbor;   
+}
+
+.circuit_trait {
+	float:left;
+	width:25px;
+	height:25px;
+}
+
+.circuit_trait:hover {
+	box-shadow: 0 0 0 2px black inset;
+}
+
+.circuit_line {
+	position:absolute;
+	width:200px;
+	height:24px;
+	top:45px;
+	left:45px;
+}
+
+
+
+#bottom_stuff {
+	position:relative;
+	width:800px;
+	margin: 0px auto;
+}
+
+#about_div {
+	position:relative;
+	width:800px;
+	margin: 0px auto;
+}
+
+#about_click {
+    text-decoration:underline;
+}
+#about_click:hover {
+    color:red;
+    opacity:0.8;
+}
+#about_click:active {
+    opacity:0.5;
+}
+
+#about_text {
+    display:none;
+    text-align:left;
+}
+

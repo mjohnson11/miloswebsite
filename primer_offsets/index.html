@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<link rel='stylesheet' href='/css/front_page.css' />
+<link rel='stylesheet' href='css/primer_sheet.css' />
+
+<title>Primer Offsets</title>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="js/primer_offsets.js"></script>
+    
+</head>
+
+<body onload="start()">
+    <h1>Primer Offset Work</h1>
+    <div class="line_divider_2"></div><br />
+    <p1>Input files must be csvs with 2 columns: Name,Sequence</p1><br />
+    <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+    <div id="save_file_button" onclick='save_data()'><h3>Save to file</h3></div>
+    <div id="big_div">
+        <div id="primer_zone">
+            <h2 id='primer_name_title'>Names</h2>
+            <h2 id='primer_title'>Primers</h2>
+            <div id="graph_spot"></div>
+        </div>
+    </div>
+</body>
+    
+</html>
+
+
+
+
+
+
+

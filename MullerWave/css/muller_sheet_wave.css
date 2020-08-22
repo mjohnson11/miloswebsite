@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/* CSS Document */ 
+/*root stylesheet*/
+
+.pixel_canvas {
+    position:relative;
+    margin:0px auto;
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;          
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;            
+    image-rendering: pixelated;                 
+    -ms-interpolation-mode: nearest-neighbor;   
+}
+
+#full_pixel_canvas {
+    position:absolute;
+    top:0px;
+    display:none;
+}
+
+#some_bottom_space {
+    height:200px;
+}
+
+#about_div {
+    position:relative;
+    margin:0px auto;
+    width:1000px;
+}
+
+#about_click {
+    text-decoration:underline;
+}
+#about_click:hover {
+    color:red;
+    opacity:0.8;
+}
+#about_click:active {
+    opacity:0.5;
+}
+
+#about_text {
+    display:none;
+    text-align:left;
+}
+
+#dissect_div {
+    position:relative;
+    margin:10px auto;
+    width:1000px;
+    height:0px;
+    overflow:scroll;
+    margin-bottom: 100px;
+    display:none;
+}
+
+.dissect_lin {
+    position:absolute;
+    margin:0px auto;
+    left:0px;
+    width:1000px;
+    height:36px;
+    text-align:left;
+}
+
+.lin_name_color_zone {
+    position:absolute;
+    top:20px;
+    left:28px;
+    width:14px;
+    height:14px;
+}
+
+.lin_name_zone {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:150px;
+    height:20px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding-left:50px;
+    padding-top:16px;
+}
+
+.lin_percent_zone {
+    position:absolute;
+    top:0px;
+    left:200px;
+    width:150px;
+    height:20px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding-left:50px;
+    padding-top:16px;
+}
+
+.lin_fitness_zone {
+    position:absolute;
+    top:0px;
+    left:400px;
+    width:150px;
+    height:20px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    padding-left:50px;
+    padding-top:16px;
+}
+
+.lin_history_zone {
+    position:absolute;
+    top:0px;
+    left:600px;
+    width:350px;
+    height:20px;
+    border-bottom: 1px solid black;
+    padding-left:50px;
+    padding-top:16px;
+    overflow:scroll;
+}
+
+.lin_single_hist {
+    position:absolute;
+    left:0px;
+    height:26px;
+    width:324px;
+    padding-left:26px;
+}
+
+.lin_history_color {
+    position:absolute;
+    top:4px;
+    left:6px;
+    width:14px;
+    height:14px;
+}
+
+.lin_history_s {
+    position:absolute;
+    top:0px;
+    left:125px;
+}
+
+.lin_history_time {
+    position:absolute;
+    top:0px;
+    left:200px;
+}
+
+
+#pause_button {
+    position:absolute;
+    top:670px;
+    left:520px;
+    width:100px;
+    height:50px;
+    padding:10px;
+
+}
+
+#dissect_button {
+    position:absolute;
+    top:670px;
+    left:720px;
+    width:200px;
+    height:50px;
+    padding:10px;
+
+}
+
+#pause_button:hover {
+    opacity:0.8;
+    font-size:1.1em;
+}
+
+#pause_button:active {
+    opacity:0.6;
+    text-decoration:bold;
+}
+
+#dissect_button:hover {
+    opacity:0.8;
+    font-size:1.1em;
+}
+
+#dissect_button:active {
+    opacity:0.6;
+    text-decoration:bold;
+}
+
+#muller_div {
+	position:relative;
+	width:1350px;
+	height:750px;
+	margin: 0px auto;
+}
+
+#muller_state {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:1000px;
+    height:700px;
+    overflow: scroll;
+}
+
+#wave_div {
+    position:absolute;
+    top:0px;
+    left:1010px;
+    width:320px;
+    height:500px;
+    overflow: scroll;
+}
+
+#muller_stats {
+    position:absolute;
+    width:1000px;
+    height:50px;
+    top:700px;
+    left:200px;
+}
+
+#mul_stat_1 {
+    position:absolute;
+    top:10px;
+    left:1px;
+    background-color:#CCCCAA;
+    width:248px;
+    height:30px;
+}
+#mul_stat_2 {
+    position:absolute;
+    top:10px;
+    left:251px;
+    background-color:#CCCCAA;
+    width:248px;
+    height:30px;
+}
+#mul_stat_3 {
+    position:absolute;
+    top:10px;
+    left:501px;
+    background-color:#CCCCAA;
+    width:248px;
+    height:30px;
+}
+#mul_stat_4 {
+    position:absolute;
+    top:10px;
+    left:751px;
+    background-color:#CCCCAA;
+    width:248px;
+    height:30px;
+}
+
+#param_form {
+    position:relative;
+    margin:0px auto;
+    width:1000px;
+    height:130px;
+}
+
+label {
+    /* To make sure that all labels have the same size and are properly aligned */
+    display: inline-block;
+    width:90px;
+    text-align: right;
+}
+
+#q_pop_size {
+    position:absolute;
+    top:5px;
+    left:600px;
+}
+
+#q_mut_probs {
+    position:absolute;
+    top:5px;
+    left:100px;
+}
+
+#q_mut_options {
+    position:absolute;
+    top:25px;
+    left:400px;
+    text-align:right;
+}
+
+#q_submit {
+    position:absolute;
+    top:90px;
+    left:475px;
+}
+
+.s_exp {
+    width:70px;
+}
+
+.radio_chooose_1 {
+    margin-left:100px;
+}
+
+.radio_chooose_2 {
+    padding-left:5px;
+}
+
+

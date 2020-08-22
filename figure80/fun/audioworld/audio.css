@@ -1,0 +1,87 @@
+/*
+CSS for audio panel stuff
+*/
+
+.audio_panel{
+  position:fixed;
+  left:10px;
+  top:0px;
+  width:360px;
+}
+
+.audio_display{
+  width:360px;
+  height:300px;
+  display:none;
+  background-color: rgba(255,255,255,.2);
+  color:black;
+}
+
+.audio_options{
+  width:360px;
+  height:36px;
+  background-color: rgba(255,255,255,.2);
+}
+
+.audio_button {
+  width: 45px;
+  height: 22px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size:13px;
+  background-color: #DDD; 
+  color: #000;
+  margin-top:5px;
+  margin-left:7px;
+  margin-right:8px;
+  text-align: center;
+  float:left;
+}
+
+.audio_button:hover {
+  opacity:0.8;
+  cursor: pointer;
+}
+
+.audio_gain_holder {
+  width: 80px;
+  height: 22px;
+  margin-top:7px;
+  margin-right:10px;
+  float:left;
+}
+
+.arrow {
+  position:absolute;
+  left: 320px;
+  top: 10px;
+  width: 0; 
+  height: 0; 
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.arrow:hover {
+  opacity:0.8;
+  cursor: pointer;
+}
+
+.arrow_down {
+  border-top: 15px solid #DDD;
+}
+
+.arrow_up {
+  border-bottom: 15px solid #DDD;
+  display: none;
+}
+
+#file_input {
+  display: none;
+}
+
+#debug_monitor_text {
+  position: absolute;
+  left:20px;
+  top:50px;
+  display: none;
+}

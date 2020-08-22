@@ -1,0 +1,147 @@
+
+#dfe_graph {
+  width:100%;
+}
+
+#dfe_div_holder {
+  width: 100%;
+}
+
+#dfe_div {
+  width:480px;
+  max-width:100%;
+  position: relative;
+  text-align: center;
+  float: left;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+#least_fit {
+  text-align: center;
+  width:40%;
+  left:0px;
+  top:100%;
+  position: absolute;
+}
+
+#most_fit {
+  text-align: center;
+  width:40%;
+  right:0px;
+  top:100%;
+  position: absolute;
+}
+
+
+#dfe_whiteboard {
+  width:410px;
+  max-width:100%;
+  margin-right:25px;
+  float: left;
+  border: 5px solid #CCC;
+}
+
+#dfe_slider {
+  width: 70%;
+  margin: 0px auto;
+}
+
+#idv {
+  position: relative;
+  width:100%;
+  height:700px;
+  overflow-y: scroll;
+  background-color: "#FF0000";
+}
+
+#idv::-webkit-scrollbar {
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#idv::-webkit-scrollbar-thumb {
+  width: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.single_edge_plot {
+  width: 210px;
+  height: 170px;
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 15px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.single_edge_plot:hover {
+  opacity: 0.6;
+}
+
+.axis {
+  color: #EEE;
+}
+
+.plot_title {
+  fill: #DDD;
+}
+
+.horizontal_dash {
+  stroke-dasharray: 5,5;
+}
+
+#zoom_idv {
+  width:100%;
+  max-width:800px;
+  height:100%;
+  margin: 0px auto;
+  position: relative;
+}
+
+#zoom_svg {
+  float: left;
+  margin-right:50px;
+  margin-top:15px;
+  height: 314px;
+  width: 350px;
+}
+
+#edge_descrip {
+  margin-top:15px;
+  width: 350px;
+  height: 320px;
+  float: left;
+  font-size:0.8em;
+}
+
+.zoomed_point {
+  opacity: 0.7;
+}
+
+.zoomed_point:hover {
+  opacity: 1;
+}
+
+.x_exit {
+  position:absolute;
+  left:20px;
+  top:20px;
+}
+
+.x_exit:hover {
+  opacity: 0.5;
+}
+
+.freq_div {
+  margin:20px;
+  width:350px;
+  height:280px;
+  float:left;
+}
+
+#freq_div_holder {
+  width:100%;
+  float:left;
+  text-align: center;
+}

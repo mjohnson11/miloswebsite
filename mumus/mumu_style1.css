@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* CSS Document */ 
+/*extra stylesheet for slider stuff*/
+
+/*@import url(http://fonts.googleapis.com/css?family=Abel);*/
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(http://fonts.googleapis.com/css?family=Gochi+Hand);
+@import url(http://fonts.googleapis.com/css?family=Francois+One);
+
+body {
+    background-image: url("photo/cat_mumu.jpg");
+    background-repeat: repeat;
+    margin:10px auto;
+    text-align:left;
+}
+
+#super_div {
+    position:relative;
+}
+
+#mainer_div {
+    width:1000px;
+    height:1100px;
+    position:relative;
+    margin:0px auto;
+    text-align: left;
+}
+
+h1 {
+    color:red;
+    font-size:3.0em;
+    font-family:"Gloria Hallelujah", Fallback, sans-serif;
+}
+
+p1 {
+    font-size:5.0em;
+    color:LawnGreen;
+    font-family:"Francois One", Fallback, sans-serif;
+}
+
+p2 {
+    color:yellow;
+    font-size:4.0em;
+    font-family:"Gochi Hand", Fallback, sans-serif;
+    line-height:60%;
+}
+
+#q1 {
+    position:absolute;
+    left:20px;
+    top:0px;
+}
+#q2 {
+    position:absolute;
+    left:200px;
+    top:150px;
+}
+#q3 {
+    position:absolute;
+    left:20px;
+    top:350px;
+}
+#q4 {
+    position:absolute;
+    left:200px;
+    top:500px;
+}
+#main_text {
+    position:absolute;
+    left:0px;
+    top:650px; 
+}
+#contacter {
+    position:absolute;
+    left:0px;
+    top:900px;
+}
+

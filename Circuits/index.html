@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<link rel='stylesheet' href='/css/front_page.css' />
+<link rel='stylesheet' href='circuits.css' />
+
+<title>Circuits</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="try_circuits.js"></script>
+<script src="/js/about_trigger.js"></script>
+
+</head>
+
+<body onload="main_func()">
+
+<p3 id="home_link_black"><a href="/">home</a></p3>
+
+<h1>Circuits</h1>
+<div class="line_divider_2"></div>
+
+<form id=param_form>
+    N (The number of nodes, choose a number between 1 and 100, square numbers look best): <input id="form_N" type="number" min="1" max="100" name="N" value="16"><br>
+    K (The number of other randomly chosen nodes that can affect each node, choose a number between 1 and 12): <input id="form_K" type="number" min="0" max="12" name="K" value="1"><br><br>
+    <input type="button" onclick="main_func()" value="Submit"><br>
+</form>
+
+
+
+<div id="state_div">
+    <div id=arrow_house>
+    </div>
+    <div id="state">
+    	<!--THIS IS WHERE THE TRAIT BLOCKS GO - it will be populated with elements by the javascript-->
+    </div>
+</div>
+
+<div id="bottom_part">
+    <div id="interaction_button" onClick="show_hide_arrows()">
+        <p1>Show/Hide Interactions</p1>
+    </div>
+    <div id="about_div">
+        <h2 id="about_click" onClick="show_about()">About</h2>
+    </div>
+    <div id="limit_div">
+        <p1 id="limit_cycle_ques">Searching...</p1>
+    </div>
+    <br /><br /><br />
+    <p1 id="about_text">
+        This is an interactive model of a circuit that repeatedly updates which nodes are "on" based on set rules.  It can be used to represent a ciruit of regulatory genes affecting each other in a biological system - or any other kind of system in which the state of one node/gene is determined by the states of other nodes/genes in the previous timestep (obviously assuming a repeated one-size time step is not realistic, but it makes for a simple model).  In this program, the state of each of N nodes is determined by the state of K randomly selected nodes in the system (you can try different combinations of values for N & K above).  The "instructions" for each state are assigned randomly (on or off) for each of the 2^K combinations of the K interaction nodes.  Interaction nodes are chosen randomly without replacement and the node in question can be chosen as an interactor (self regulation).  Since the instructions are chosen randomly, changing the state of an interactor will not necessarily change the state of the node in question (it might be off or on in both cases).
+        <br /><br />
+        At the bottom right, the simulation records whether the system has reached a stable state - either a fixed state (fixed point) or a cycle of states (limit cycle), or if it has yet to return to any previous state (searching).  Technically the system will always reach a fixed point or a limit cycle, but since there are 2^N possible states for the entire system, in some cases it might take an unreasonable amount of time.
+        <br /><br />
+        You can click a block to turn that node off, which will reset the text at bottom right, since you've really changed the system!  With a low K value, you can even click blocks and start to try to understand where the interactions are (which you can see by clicking the button above - for high K it's pretty unreadable, but it works for low K).  When you click a block again it will turn on, but may go off again depending on the states of its interactors.  The NK model here is based on ideas that Stuart Kauffman put forth in his book <i>At Home in The Universe</i>, especially in the section about cell differentiation.  Check it out for some interesting ideas about cell differentiation in terms of the different stable states or basins of attractions in a system of genetic circuits.  This is related, but not the same as an <a href="../Scapes/NK">NK fitness landscape</a>. 
+        <br /><br />
+    </p1>
+    
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
