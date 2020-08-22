@@ -356,3 +356,11 @@ function update_dfe_graph(i) {
   d3.select("#dfe_graph").attr("src", "data/dfe_pngs/dfe" + String(i) + ".png");
 }
 
+function setup_all_interaction_action() {
+  setup_all();
+  // pre-caches all DFE images for fast scrolling
+  for (let i=1;i<82;i++) {
+    let tmp = new Image();
+    tmp.src = "data/dfe_pngs/dfe" + String(i) + ".png"
+  }
+}
