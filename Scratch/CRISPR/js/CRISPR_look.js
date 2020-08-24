@@ -21,6 +21,7 @@ var graph_h = 470;
 var graph_w = 510;
 
 var use_y_var = 's';
+var use_x_var = "Fitness1";
 
 var x_ax = d3.scaleLinear()
   .range([40, graph_w-15])
@@ -33,7 +34,12 @@ var for_zero_line = d3.line()
   .y(function(d) { return s_ax(d.y); })
 
 function display_time() {
-	let tmp_y_var = (d3.select("#plot_fitness").property("checked")) ? 'Fitness2' : 's';
+	let tmp_x_var = (d3.select("#swap_muts").property("checked")) ? 'Fitness2' : 'Fitness1';
+	let tmp_x2_var = (d3.select("#swap_muts").property("checked")) ? 'Fitness1' : 'Fitness2' ;
+	let tmp_s_var = (d3.select("#swap_muts").property("checked")) ? 's_rev' : 's' ;
+	let tmp_y_var = (d3.select("#plot_fitness").property("checked")) ? tmp_x2_var : tmp_s_var;
+	let errors = (d3.select("#swap_muts").property("checked")) ? ['Error2', 'Error1'] : ['Error1', 'Error2'];
+
 	d3.select("#pick1").selectAll(".trait")
 		.attr("class", function(d, i) {
 			if (i == picked_mutation) {
@@ -61,9 +67,10 @@ function display_time() {
 			}
 		})
 	
-	if ((picked_mutation != current_displayed_pick) || (tmp_y_var != use_y_var)) {
+	if ((picked_mutation != current_displayed_pick) || (tmp_y_var != use_y_var) || (tmp_x_var != use_x_var)) {
 		use_y_var = tmp_y_var;
-		if (use_y_var == 's') {
+		use_x_var = tmp_x_var;
+		if (use_y_var.indexOf('s')==0) {
 			zero_line.attr('opacity', 1);
 			one_to_one_line.attr('opacity', 0);
 		} else {
@@ -81,12 +88,12 @@ function display_time() {
 					.attr("stroke", "#000")
 					.attr("stroke-width", 0)
 					.attr("opacity", 0.7)
-					.attr("x", function(d) { return x_ax(d['Fitness1'])-4; })
+					.attr("x", function(d) { return x_ax(d[use_x_var])-4; })
 					.attr("y", function(d) { return s_ax(d[use_y_var])-4; })
 					.on("mouseover", function(d) {
 						d3.select(this).attr("stroke-width", 2)
-						error_bar_x.attr('x', x_ax(d['Fitness1']-d['Error1'])).attr('y', s_ax(d[use_y_var])-1).attr('width', x_ax(d['Error1']*2)-x_ax(0));
-						error_bar_y.attr('x', x_ax(d['Fitness1'])-1).attr('y', s_ax(d[use_y_var]+d['Error2'])).attr('height', -1*(s_ax(d['Error2']*2)-s_ax(0)));
+						error_bar_x.attr('x', x_ax(d[use_x_var]-d[errors[0]])).attr('y', s_ax(d[use_y_var])-1).attr('width', x_ax(d['Error1']*2)-x_ax(0));
+						error_bar_y.attr('x', x_ax(d[use_x_var])-1).attr('y', s_ax(d[use_y_var]+d[errors[1]])).attr('height', -1*(s_ax(d['Error2']*2)-s_ax(0)));
 						state_text.html(d['State'].split("").join("<br />"));
 					})
 					.on("mouseout", function(d) {
@@ -109,7 +116,7 @@ function mutation_pick(d, i) {
 			let datum1 = data[entry]
 			if (entry.substr(0, i) + '1' + entry.substr(i+1) in data) {
 				let datum2 = data[entry.substr(0, i) + '1' + entry.substr(i+1)]
-				s_data.push({'State': entry.substr(0, i) + 'X' + entry.substr(i+1), 'Fitness1': datum1[0], 'Fitness2': datum2[0], 's': datum2[0] - datum1[0], 'Error1': datum1[1], 'Error2': datum2[1]});
+				s_data.push({'State': entry.substr(0, i) + 'X' + entry.substr(i+1), 'Fitness1': datum1[0], 'Fitness2': datum2[0], 's': datum2[0] - datum1[0], 's_rev': datum1[0] - datum2[0], 'Error1': datum1[1], 'Error2': datum2[1]});
 			}
 		}
 	}
