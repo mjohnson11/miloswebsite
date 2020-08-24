@@ -11,12 +11,16 @@ var error_bar_y;
 var error_bar_x;
 
 var svg_obj;
+var zero_line;
+var one_to_one_line;
 
 var s_domain = [-0.15, 0.1];
 var x_domain = [-0.15, 0.1];
 
 var graph_h = 470;
 var graph_w = 510;
+
+var use_y_var = 's';
 
 var x_ax = d3.scaleLinear()
   .range([40, graph_w-15])
@@ -29,6 +33,7 @@ var for_zero_line = d3.line()
   .y(function(d) { return s_ax(d.y); })
 
 function display_time() {
+	let tmp_y_var = (d3.select("#plot_fitness").property("checked")) ? 'Fitness2' : 's';
 	d3.select("#pick1").selectAll(".trait")
 		.attr("class", function(d, i) {
 			if (i == picked_mutation) {
@@ -56,7 +61,15 @@ function display_time() {
 			}
 		})
 	
-	if (picked_mutation != current_displayed_pick) {
+	if ((picked_mutation != current_displayed_pick) || (tmp_y_var != use_y_var)) {
+		use_y_var = tmp_y_var;
+		if (use_y_var == 's') {
+			zero_line.attr('opacity', 1);
+			one_to_one_line.attr('opacity', 0);
+		} else {
+			zero_line.attr('opacity', 0);
+			one_to_one_line.attr('opacity', 1);
+		}
 		d3.selectAll('.data_point').remove();
 		svg_obj.selectAll(".data_point")
 			.data(s_data)
@@ -69,11 +82,11 @@ function display_time() {
 					.attr("stroke-width", 0)
 					.attr("opacity", 0.7)
 					.attr("x", function(d) { return x_ax(d['Fitness1'])-4; })
-					.attr("y", function(d) { return s_ax(d['s'])-4; })
+					.attr("y", function(d) { return s_ax(d[use_y_var])-4; })
 					.on("mouseover", function(d) {
 						d3.select(this).attr("stroke-width", 2)
-						error_bar_x.attr('x', x_ax(d['Fitness1']-d['Error1'])).attr('y', s_ax(d['s'])-1).attr('width', x_ax(d['Error1']*2)-x_ax(0));
-						error_bar_y.attr('x', x_ax(d['Fitness1'])-1).attr('y', s_ax(d['s']+d['Error2'])).attr('height', -1*(s_ax(d['Error2']*2)-s_ax(0)));
+						error_bar_x.attr('x', x_ax(d['Fitness1']-d['Error1'])).attr('y', s_ax(d[use_y_var])-1).attr('width', x_ax(d['Error1']*2)-x_ax(0));
+						error_bar_y.attr('x', x_ax(d['Fitness1'])-1).attr('y', s_ax(d[use_y_var]+d['Error2'])).attr('height', -1*(s_ax(d['Error2']*2)-s_ax(0)));
 						state_text.html(d['State'].split("").join("<br />"));
 					})
 					.on("mouseout", function(d) {
@@ -151,13 +164,22 @@ function setup() {
 		.attr("class", "axis")
 		.attr("transform", "translate(0," + s_ax(s_domain[0]) + ")")
 		.call(d3.axisBottom(x_ax).ticks(5));
-	svg_obj.append("path")             
+
+	zero_line = svg_obj.append("path")             
 		.attr("class", "horizontal_dash")
 		.attr("fill", "none")
 		.attr("stroke", "white")
 		.attr("stroke-width", 3)
 		.attr("opacity", 0.5)
 		.attr("d", for_zero_line([{'x': x_domain[0], 'y': 0}, {'x': x_domain[1], 'y': 0}]));
+
+	one_to_one_line = svg_obj.append("path")             
+		.attr("class", "horizontal_dash")
+		.attr("fill", "none")
+		.attr("stroke", "white")
+		.attr("stroke-width", 3)
+		.attr("opacity", 0.5)
+		.attr("d", for_zero_line([{'x': x_domain[0], 'y': x_domain[0]}, {'x': x_domain[1], 'y': x_domain[1]}]));
 
 	error_bar_y = svg_obj.append("rect")
 		.attr("width", 2)
