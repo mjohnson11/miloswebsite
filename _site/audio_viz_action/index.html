@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176166415-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176166415-1');
+</script>
+
+    <link rel='stylesheet' href='client/audio_action.css'>
+  </head>
+  <body onload="input_audio_go()">
+    <div id='vid_action_container'>
+      <form id='video-input-form'>
+        <input id='video-id-input' type='text' />
+        <button type='submit'>Process</button>
+      </form>
+      <div id='svg_div'></div>
+    </div>
+  </body>
+  <script src="//d3js.org/d3.v4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.js" charset="utf-8"></script>
+  <script src='client/audio_action.js'></script>
+</html>

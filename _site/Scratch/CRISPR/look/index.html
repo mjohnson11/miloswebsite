@@ -1,0 +1,71 @@
+<html>
+
+<title>Interactive Exploration of a Combinatorically Complete Empirical Fitness Landscape</title>
+
+<head>
+
+<link rel='stylesheet' href='css/CRISPR.css' />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<script src="d3/d3.min.js"></script>
+<script src="js/CRISPR_look.js"></script>
+<script src="js/SliderChange.js"></script>
+
+</head>
+
+<body onload="loaddata()">
+
+<div id="content_container">
+
+<h1 id="paper_title">CRISPR ACTION TOWN</h1>
+<h2 id="paper_author">ft. ALEX + CHRIS</h2>
+
+<div id="full_diagram_bigger">
+
+  <div id="state_div1" class="a_state_div">
+    <div id="state_title_div">
+    <h3 id="state_title">Mutation to look at:</h3>
+    </div>
+    <div id="pick1" class="holds_blocks"><!--THIS IS WHERE THE TRAIT BLOCKS GO--></div>
+  </div>
+  <div id="state_div2" class="a_state_div">
+    <div id="state_title_div">
+    <h3 id="state_title">Mutation to color by</h3>
+    </div>
+    <div id="pick2" class="holds_blocks"><!--THIS IS WHERE THE TRAIT BLOCKS GO--></div>
+  </div>
+  <div id="state_div3" class="a_state_div">
+    <div id="state_title_div">
+    <h3 id="state_title">Mutation to symbol by</h3>
+    </div>
+    <div id="pick3" class="holds_blocks"><!--THIS IS WHERE THE TRAIT BLOCKS GO--></div>
+  </div>
+  <div id="state_text"></div>
+
+  <div id="svg_graph"></div>
+  <input id="plot_fitness" type="checkbox" onchange="display_time()">plot fitness on y axis (instead of s)<br />
+  <input id="swap_muts" type="checkbox" onchange="display_time()">swap mutation direction<br />
+  
+</div>
+
+</div>
+ 
+</body>
+
+<div id="footer_div">
+    <div id="footer_contact">
+        <p4 id="contact_text">milo.s.johnson.13 AT gmail</p4>
+    </div>
+</div>
+
+</html>
+
+
+
+
+
+
+
+
+

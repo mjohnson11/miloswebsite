@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176166415-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176166415-1');
+</script>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Figure 80 - Interaction Action</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet" type="text/css">
+
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="../../css/normalize.css">
+  <link rel="stylesheet" href="../../css/milo_skeleton.css">
+  <link rel="stylesheet" href="css/interaction_action.css">
+  
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="../../d3/d3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="../../js/setup_elements.js"></script>
+  <script src="js/interaction_action.js"></script>
+
+  <!-- Favicon
+  ––––––––––––––––––––––––––––––––––––––––––––––––––  -->
+  <link rel="icon" type="image/svg+xml" href="../../Favicon.svg">
+
+</head>
+<body onload="setup_all()">
+  <p id="home_link"><a href="../../">FIGURE 80</a></p>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns">
+        <div class="title_zone">
+          <h2>HOW MUTATIONS INTERACT</h2>
+          <div class="title_underline"></div>
+          <h4><b>A story about anchovies with chocolate, bad work days, and mutations in yeast</b></h4>
+          <p><b>Based on a paper called "Higher-fitness yeast genotypes are less robust to deleterious mutations"</b></p>
+          <p>Original <a href="https://science.sciencemag.org/content/366/6464/490" target="_blank">paper</a> &amp <a href="https://www.biorxiv.org/content/10.1101/675314v1" target="_blank">preprint</a> by Milo Johnson, Alena Martsul, Sergey Kryazhimskiy, and Michael Desai</p>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>INTRO</i></u></h3>
+            <p><i>We intuitively understand interactions in human-built systems better than in biological systems</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+              The effects of a change depend on the circumstances.<br /><br />
+              Wow what a meaningless first sentence! Let's back up...<br /><br />
+              Adding chocolate to a recipe will be good for some recipes but disastrous for others. If a soccer team with an excellent goalkeeper picks up a good goalkeeper it will have less impact than if a team with only poor goalkeepers makes the same trade. The decision to offer expedited delivery will affect large and small retailers differently. So we clearly all understand that when we make changes to the <i>systems</i> in our everyday lives, the results depend on the characteristics of those systems. And, as biologists have known for over a century, a mutation may cause a particular physical change in one strain and a completely different change in another closely related strain. These “background-dependent” effects result from the fact that all of these systems have interacting parts, and we call these interactions EPISTASIS.
+              <br /><br />
+              When we try to improve the systems in the human-built world – sports teams, companies, recipes, cities – we have strong intuition about these interactions. We understand that in optimizing a process we may face diminishing returns, so that changes that might have been impactful at an earlier stage will not contribute meaningfully later on. When we are working on improving a recipe, we understand specific interactions - chocolate works well with peanut butter, but not necessarily with anchovies (<a href="https://ask.metafilter.com/153302/Two-great-tastes-that-taste-terrible-together" target="_blank">source</a>, but also see this <a href="https://www.cookingchanneltv.com/recipes/david-rocco/penne-al-cioccolato-con-anchovies-penne-with-chocolate-and-anchovies-1960547" target="_blank">counterpoint</a>). 
+              <br /><br />
+              We can think about research on epistasis as an attempt to build this kind of intuition in biological systems. What determines how much a mutation affects a particular strain or genotype? When will interactions be broad (i.e. a good soccer player will have a bigger impact on a worse team) or specific (i.e. adding lime will be a better choice if there is already cilantro in the recipe)?<br /><br />
+              So how do we gain intuition about how the effects of mutations depend on the genetic background? We put on our science clothes (ok just regular clothes except no sandals) and put as many mutations into as many genetic backgrounds as we can, and then measure all their effects! Simple as that.
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>WHAT DID WE DO?</i></u></h3>
+            <p><i>Put a bunch of mutations into a bunch of yeast and measured their fitness effects</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+              OK not quite as simple as that. There are many methods available for engineering mutations in animals, plants, and microbes. Our particular choices were made largely based on convenience. Our lab studies the budding yeast Saccharomyces cerevisiae, which rose to fame centuries ago as a handy bread and beer maker, and then later as the easiest eukaryote to play with in the lab. A few facts about S. cerevisiae that matter here:
+            </p>
+            <ul>
+              <li>They can generally divide about once every 90 minutes (though this is different for different strains), so we can dilute them 1/1024 each day and they can divide 10 times to get back (2^10=1024) to their starting density.</li>
+              <li>They are really good at repairing their DNA using pieces of similar DNA by homologous recombination. This means that if we put a piece of DNA into the cell that lines up with a part of the genome, it will sometimes (very rarely, but still commonly enough to be useful) replace that part of the genome. (Click on the picture to look through the slideshow-graphic below).</li>
+              <div class="m_slideshow slideholder" num_slides="2" base="slideshows/Transformation/" suffix="Transformation.svg">
+                <img class="m_slide" alt="hand-drawn slideshow depicting transformation and homologous recombination in yeast" src="slideshows/Transformation/1Transformation.svg">
+                <div class="m_controls"></div>
+              </div>
+              <li>They smell better than bacteria (OK this isn’t that important, just sayin).</li>
+            </ul>
+            <p>
+              Alright so we want to put a lot of mutations into a lot of yeast strains. To make mutations, we used a plasmid-based transposon insertion library that other scientists made years ago (<a href="https://sites.lsa.umich.edu/kumar-lab/functional-genomics-in-yeast-using-transposon-insertion-libraries/" target="_blank">protocol</a>, <a href="https://genome.cshlp.org/content/14/10a/1975" target="_blank">paper</a>). These plasmids have a backbone, a section of the yeast genome, and a transposon that interrupts that section. What I did is take this existing library, sample a smaller set of plasmids from it (which correspond to a set of insertion locations in the yeast genome), and add random DNA barcodes into the inside of the transposon. 
+            </p>
+            <div class="slideholder">
+              <img class="m_slide" alt="drawing of the plasmid used in thiis experiment, showing DNA Barcode inside a Tn7 transposon, inside a section of yeast DNA, connected with a backbone" src="slideshows/Plasmid.svg">
+            </div>
+            <p>
+              These barcodes identify each different insertion/mutation uniquely, and when I put them into yeast later, I can track the frequencies of barcodes by sequencing. In order to make these barcoded libraries, I came up with / improved a few fun methods that you can read more about if you’re into that kind of thing (NOTE: I'm serious, don't click if you don't care! My personal bad habit is to click anything I can click, but the idea is for these dropdowns to be super-optional, so if you don't care about sequencing transposon edges etc. resist the urge to click!)
+            </p>
+            
+            <div class='drill_down'>
+              <div class='drill_title'><p>Reading the transposon edge with “TagMap” sequencing</p></div>
+              <div class='drill_content'>
+                <p>In order to identify particular insertions in yeast genomic DNA in our plasmid libraries, we need to sequence from a <i>known</i> region, the inside of the transposon, into an <i>unknown</i> region, the yeast genome outside the transposon. This is tricky because we don't have a PCR primer that will magically work for the unknown region. People have invented a few different ways to deal with this problem, including a neat trick with a restriction enzyme that works on one type of transposon edge (<i>Mme</i>1, see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3842022/" target="_blank">this</a> paper), but we used a different method: one that uses ... you guessed it - another transposon! This engineered transposon, or "tagmentase," randomly inserts into our plasmids. Some fraction of the time, it inserts near the transposon edge, and we can do a pcr between the transposon in the plasmid and the one we just inserted, reading the yeast genomic DNA in between. This process has been used for whole genome sequencing for a while, but there are only a few papers describing doing it for this kind of edge-sequencing (<a href="https://www.biorxiv.org/content/10.1101/037762v5" target="_blank">this "TagMap" paper</a> describes the method well, BUT we were also able to make it work using the commercially available Tn5, which might be easier for many labs!). </p>
+                <div class="m_slideshow slideholder" num_slides=6 base="slideshows/Tagmap/" suffix="Tagmap.svg">
+                  <img class="m_slide" alt="drawn slideshow depicting the TagMap method" src="slideshows/TagMap/1TagMap.svg">
+                  <div class="m_controls"></div>
+                </div>
+                <div class='drill_closer'>close</div>
+              </div>
+            </div>
+            
+            <div class='drill_down'>
+              <div class='drill_title'><p>Identifying many plasmid identities at once using  Cartesian-pooling coordinate sequencing</p></div>
+              <div class='drill_content'>
+                <p>In order to build the plasmid libraries we used in this project, we needed to isolate and identify a ton of individual plasmids (identify which section of the yeast genome is inside the plasmid and where the transposon insertion is in that section of yeast genome). To do that without having to sequence hundreds or thousands of plasmid-bearing strains individually, we use a nifty trick called "coordinate sequencing", where we sequence pools of plasmids from rows, columns, plate-rows, and plate-columns of a set of 96 well plates. We pool and sequence everything in row A of all plates, Row B or all plates, etc., we pool and sequence everything in column 1 of all plates, column 2 of all plates, etc., and then we make pools of all wells of each plate ("plate pools") and arrange these pools in a grid as well, so we can pool and sequence everything from row A etc. and column 1 etc. of this grid. Then when we get all the sequencing results back, if we see a particular insertion in the yeast genome (I call these "edges" since they are the nucleotides next to the transposon edge) in the Row A pool, Column 2 pool, plate-row B, and plate-column 1, we know that plasmid is in plate 2, well A2 (two papers that describe this method:<a href="https://www.ncbi.nlm.nih.gov/pubmed/25960123" target="_blank">1</a>, <a href="https://www.nature.com/articles/nprot.2017.073" target="_blank">2</a>, <a href="https://www.biorxiv.org/content/10.1101/044768v2" target="_blank">preprint</a>)</p>
+                <div class="m_slideshow slideholder" num_slides="6" base="slideshows/CS/" suffix="CS.svg">
+                  <img class="m_slide" alt="drawing showing how cartesian-coordinate sequencing works" src="slideshows/CS/1CS.svg">
+                  <div class="m_controls"></div>
+                </div>
+                <div class='drill_closer'>close</div>
+              </div>
+            </div>
+
+            <div class='drill_down'>
+              <div class='drill_title'><p>Why redundant barcoding is the best</p></div>
+              <div class='drill_content'>
+                <p>When we add barcodes to the plasmid libraries, we end up with the same plasmid (the same insertion mutation) labeled by many different barcodes. This is useful for two important reasons:<br />
+                1. In each transformation there are multiple barcodes per insertion mutation, so if we get enough transformed cells, we will get multiple replicate barcodes for each mutation in our assay. This is great because when you transform cells, sometimes they come out weird, either because they get an additional mutation during the process or there was already a mutation in the population of cells you're transforming. If, for example, this "artifact" causes them to be more fit than they should, those cells will rise in frequency and you'll measure the fitness totally wrong. With only one barcode per mutation, we have no way to avoid this issue except by doing many replicate transformations and assays, which is a pain. With multiple barcodes per mutation we can see these outliers, and try to identify and exclude them. Which is super nice. BUT WAIT THERE'S MORE. We can also repeat the barcoding process multiple times, to make separate plasmid libraries with the same set of mutations but with different barcodes. When we do the TagMap sequencing to match up barcodes with mutations, we can also match them up with these separate libraries. Then when we transform different yeast strains with these libraries and do competition assays, we can pool the cells together for DNA extraction and library preps - and eventually split the data up based on which barcodes are in which library. This means we can cut our DNA extraction and library prep load X times, where X is the number of libraries, so for this last experiment I did 20 preps instead of 1760. FIVE STARS, WOULD USE REDUNDANT BARCODING AGAIN WHENEVER POSSIBLE IT IS SO GREAT.
+                </p>
+                <div class='drill_closer'>close</div>
+              </div>
+            </div>
+            
+            <p>
+              Next, I cut the sections of the yeast genome out of the plasmid libraries (all the different plasmids are pooled together at this stage) and transformed them into some yeast strains. These strains are the offspring from a mating between a wine strain and a lab strain, and they differ at tens of thousands of positions across their genome. Lucky for us, researchers in Leonid Kruglyak’s lab had already sequenced all of these strains (they also did the cross in the first place! (<a href="https://www.nature.com/articles/nature11867" target="_blank">paper</a>, <a href="http://genomics-pubs.princeton.edu/YeastCross_BYxRM/" target="_blank">data</a>)), so I already knew whether they had mom's or dad’s allele at each one of these loci.<br /><br />
+
+              I grew each of these pools of mutant yeast (one strain, but with many different insertion mutations) for four days, letting all the mutations compete against one another in an all vs. all THUNDERDOME showdown. Each day, I pooled together cells after the daily dilution, extracted DNA, and amplified the barcode region with PCR (nice to write that in a such a simple way, in reality Alena Martsul (collaborator from UCSD) and I had many back-and-forths on skype to figure out how to get our PCRs to work well!). Once we sequenced these amplified fragments, we could measure the frequency of each of the mutations over time, and by watching which mutations went up or down over the 4 days (and by how much), we could measure the fitness effect of each mutation in each strain. 
+            </p>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>WHAT WE FOUND</i></u></h3>
+            <p><i>Mutations interact in a variety of ways, but are usually more deleterious in strains that start out more fit</i></p>
+          </div>
+          <div class='drill_content'>
+            <h4>1. It is hard being fit.</h4>   
+            <p>If we look at the <i>distribution</i> of fitness effects of all the mutations, strains that start out better (that are more fit, that grow faster), have worse options - the drawing below shows the basic features of this distribution of fitness effects, and the graph shows a real distribution from one strain in the experiment - you can move the slider at the bottom to see how the distribution changes as you scroll through the list of strains, which are sorted from least fit to most fit. Each individual distribution is a little noisy, but you should be able to see the mean, indicated by a red line, shift to the left as you slide towards more fit strains.</p>
+            <div id="dfe_div_holder">
+              <img id="dfe_whiteboard" alt="drawing of a distribution of fitness effects" src="slideshows/DFE.svg">
+              <div id="dfe_div">
+                <img id="dfe_graph" alt="interactive graph of a real distribution of fitness effects from the data for one strain; the slider below let's you scroll from less fit to more fit strains, and you can see the distribution shifts more deleterious for more fit strains" src="data/dfe_pngs/dfe1.png">
+                <input id="dfe_slider" type="range" min="1" max="81" value="1" oninput="update_dfe_graph(this.value)">
+                <p id="least_fit">Least fit segregant</p>
+                <p id="most_fit">Most fit segregant</p>
+              </div>
+              <div style="clear: both; height:10px;"></div>
+            </div>
+            <h4>2. For individual mutations, there are a ton of different patterns of interactions (epistasis)!</h4> 
+            <p>In the plots below, each point represents the fitness effect of a particular mutation in one strain. Its x-axis value represents the starting fitness of that strain (how well it grows to begin with), and its y-axis value represents the fitness effect of the mutation (positive values mean it is beneficial, negative means deleterious). Click through the slideshow below to see graphics of some of the patterns of epistasis we observe, such as diminishing returns (when a mutation is <i>less beneficial in strains that start out more fit</i>) and increasing costs (when a mutation is <i>more deleterious in strains that start out more fit</i>)</p>
+            <div class="m_slideshow slideholder" num_slides="6" base="slideshows/Epistasis/" suffix="Epistasis.svg">
+              <img class="m_slide" alt="drawn slideshow showing examples of what the different types of epistasis (discussed above and below) look like in graphed data" src="slideshows/Epistasis/1Epistasis.svg">
+              <div class="m_controls"></div>
+            </div>
+            <p>Below is a data browser where data for each insertion mutation is shown in a separate graph, sorted by variance in fitness effect.</p>
+            <ul>
+              <li>Click on a plot to see more about that mutation</li>
+              <li>If the mutation's fitness effect depends on whether the strain has mom's or dad's allele at some specific loci, we change the color or shape of the points to represent the different alleles at these loci (only the two most important are shown if there are more than two)</li>
+              <li>Click on a point to see the barcode frequency data that we used to measure that fitness effect</li>
+              <li>Links in the mutation description go to the awesome SGD website that has tons of extra yeast genetics info!</li>
+            </ul>
+            <div class='drill_down'>
+              <p class='drill_title' onclick="load_idv()">Interactive data browser (click to expand, may take a while to load/run)</p>
+              <div class='drill_content' alt="An interactive data browser with fitness effect data for each mutation across all the strains. Clicking on one panel hihglights that graph and gives information on the particular mutation." id="idv">
+              </div>
+            </div>
+            <p>
+              Looking at all of these mutations, we can see that most correlations between background fitness and the fitness effect of one mutations are negative - mutations tend to be worse in strains that start out better. This helps explain the shifting distributions we saw above. BUT (AND THIS IS INDEED A BIG IMPORTANT BUT) not all mutations have simple negative correlations - some are the opposite, some have similar effects across genetic backgrounds ("low epistasis"), and others have interactions with specific QTLs (interactions with mutations that differentiate the two parents of the yeast cross). Still, there are a ton of cases of "increasing costs," where mutations are more deleterious in more fit strains. I like to think of this pattern through... SURPRISE, a metaphor:
+              <br /><br />
+              Let's say you work in an office as part of team that produces something cool (let your imagination run wild), and this team is a WELL-OILED MACHINE! Everyone is communicating seamlessly, working efficiently, and production is high. Then you have a bad day. Maybe you stayed up too late the night before, maybe you're distracted by something in your personal life, maybe you're just in an unexplainable painful slump. Since everyone else is so efficient, your bad day is likely to cause a big slow down in production. Now imagine that instead the team is a disaster to begin with. Nobody is communicating, several people are painfully slow at completing their tasks, and you finish your work with time to spare every day. In this case your bad day might not matter at all! Note that if we apply this metaphor to some of our data, where our negative correlations cross zero, having a bad day as part of a bad team sometimes even improves overall productivity - this definitely strains the metaphor a bit, but it is an interesting observation for which we don't really have any good explanation as of now!
+            </p>
+          <div class='drill_closer'>close</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>THE KEY REMAINING QUESTION</i></u></h3>
+            <p><i>Why do different mutations follow different patterns of epistasis?</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>
+              There are many follow-up questions to our study involving how applicable it is to other systems – would this be true in other strains or species, in other environmental conditions, with other types of mutations? These are interesting questions and I think we should do some of these experiments (and we’re working on some things in this direction now!), but of course we can’t test all types of mutations in all species, so there is a more fundamental goal: link these results to our understanding of biological systems, so that we can <i>predict</i> how mutations will interact. In the human-created systems around us – sports teams, recipes, manufacturing pipelines – we are constantly predicting interactions, sometimes based on large aggregate variables we can observe (how good a team already is, how spicy a dish already is, what the daily output of the pipeline is), and sometimes based on specific observables (a particular player, ingredient, machine). We see both interaction types in our data: strong correlations between fitness effects and background fitness, as well as specific interactions between insertion mutations and QTLs. When should we expect to see each of these patterns of epistasis?
+              <br /><br />
+              Because cells are small chemical machines that have been evolving for billions of years, our intuition about interactions within them is not as good as our intuition for systems we built ourselves. But hopefully by combining high throughput mutagenesis experiments with careful modeling of cellular processes, biologists can get a taste of the intuition that a manager uses to improve a supply chain, that a chef uses to perfect a recipe, or that a pair of sports radio pundits use to analyze the latest disastrous trade.
+            </p>
+            <div class='drill_closer'>^close^</div>
+          </div>
+        </div>
+        <div class='drill_down'>
+          <div class="drill_title">
+            <h3 class="m_subhead"><u><i>THE END</i></u></h3>
+            <p><i>Links to explore the data and discuss the paper</i></p>
+          </div>
+          <div class='drill_content'>
+            <p>Try analyzing the data yourself using <a href="https://mybinder.org/v2/gh/mjohnson11/figure80_interaction_action_binder/master?filepath=TnSeq_Jupyter_Jumpstart.ipynb" target="_blank">this binder</a>, or <a href="downloads.html" target="_blank">download data</a> to analyze on your own computer.</p>
+            <p>Comments and discussion are held in the twitter-world here:</p>
+            <blockquote class="twitter-tweet" data-theme="dark"><p lang="en" dir="ltr">A science communication experiment I worked on this winter and finally put online: a (hopefully) readable story about epistasis, with &quot;clickable depth,&quot; and interactive data browsing <a href="https://t.co/cfxC9Gm0vv">https://t.co/cfxC9Gm0vv</a><br>Based on work w <a href="https://twitter.com/MichaelMDesai?ref_src=twsrc%5Etfw">@MichaelMDesai</a>, <a href="https://twitter.com/skryazhi?ref_src=twsrc%5Etfw">@skryazhi</a>, and Alena Martsul <a href="https://t.co/Kg3vgSyDck">pic.twitter.com/Kg3vgSyDck</a></p>&mdash; Milo Johnson (@_miloj) <a href="https://twitter.com/_miloj/status/1297289332517220352?ref_src=twsrc%5Etfw">August 22, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div class='drill_closer'>close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176166415-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176166415-1');
+</script>
+
+    <link rel='stylesheet' href='/css/front_page.css' />
+    <link rel='stylesheet' href='basins_sheet.css' />
+
+    <title>Basins</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="../js/get_audio_input.js"></script>
+    <script src="basins_script2.js"></script>
+    <script src="/js/about_trigger.js"></script>
+
+</head>
+
+<body onload="main_func()">
+
+<p3 id="home_link_black"><a href="/">home</a></p3>
+
+<h1>Basins</h1>
+<div class="line_divider_2"></div>
+<br />
+<div id="state_div">
+    <div id="state">
+    	<canvas id="pixel_canvas" width="200px" height="200px">
+    	Canvas is not supported by your browser, sorry
+        </canvas>
+    </div>
+</div>
+
+<div id="bottom_stuff">
+    <form id=sim_param_form>
+        <p1 id="slider_label">Audio Sensitivity:</p1><br><input id="param_slider" type="range" min=0 max=100 step="1" name="sensitivity" value=40 onchange="SliderUpdate(value, 'param_show')">
+        <output for="param_text" id="param_show">40</output><br>
+    </form>
+    <h2>Audio Input Level</h2>
+    <div id="volume_meter"></div>
+</div>
+
+<div id="about_div">
+    <p1><b>ONLY WORKS ON FIREFOX AND CHROME CURRENTLY, SORRY SAFARI</b></p1>
+    <h3 id="about_click" onClick="show_about()">About Basins</h3>
+    <p1 id="about_text">
+        This is a simulation of a system with a huge number of possible states.  Each pixel in the 100 x 100 grid can be any one of 10 colors, so in all there are 10^10000 possibilities.  This simulation proceeds by picking a pixel at random, scoring it, and changing it if its score is lower than the audio input level.  The score is actually a combination of two scores - symmetry score and match score.  The symmetry score is based on how many of the symmetric pixels in the 4 quadrants of the grid are the same color as the pixel in question, and the match score is based on the total percentage of that color in the grid.  Depending on the audio level, certain states are <i>stable</i>, meaning that every pixel's score is greater than the audio level, so no pixels will change.  Increasing the audio level can then "bump" the system out of that stable state and eventually into another one.  Because of the match score, a symmetric grid will be more stable if it is made of fewer colors.  And the most stable state is a grid that is all one color - you'll have to get loud to knock the system out of one of those states.
+        <br /><br />
+        The point of the simulation is to think about the dynamics of systems with multiple stable states and the "basins of attraction" that drain into these states.  If the grid is 90% one color it is almost certainly in the basin of attraction of the stable state where the grid is 100% that color.  And stable states that are less stable can be inside the basin of attraction for a more stable state.  I think I might be talking in circles now, but hopefully you can get the idea by playing with the system.  It's interesting to think about how early random changes might constrain the system to "go" a certain direction - to end up in some basin of attraction, with no way to go backwards unless there is a big input of energy (sound in this case).
+        <br /><br />
+    </p1>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

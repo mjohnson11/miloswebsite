@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176166415-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176166415-1');
+</script>
+
+    <link rel='stylesheet' href='/css/front_page.css' />
+    <link rel='stylesheet' href='soundblaster_sheet.css' />
+
+    <title>SOUNDBLASTER</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+    <script src="../js/get_audio_input.js"></script>
+    <script src="soundblaster_script2.js"></script>
+    <script src="/js/about_trigger.js"></script>
+
+</head>
+
+<body onload="main_func()">
+
+<p3 id="home_link_black"><a href="/">home</a></p3>
+
+<h1>SOUNDBLASTER</h1>
+<div class="line_divider_2"></div>
+<br />
+<div id="game_div">
+    <canvas id="game_canvas" width="1100px" height="660px">
+    	Canvas is not supported by your browser, sorry
+    </canvas>
+    <div id="crash_div">
+        <h1 id="crash_text"></h1>
+    </div>
+    <div id="high_score_div">
+        <h1 id="high_score_title">HIGH SCORES</h1>
+        <br />
+        <p1 id="your_score"></p1>
+    </div>
+    <h1 id="practice_text">
+    <b>PRACTICE MODE</b><br />
+    Make some noise for thrust<br />
+    Left and right arrow keys to move left and right<br />
+    Press any other key to start for reals</h1>
+    <h1 id="feedback_text"></h1>
+</div>
+
+<div id="bottom_stuff">
+    <h2 id="score_text">Score: 0</h2>
+    <form id=sim_param_form>
+        Spaceship Weight: <br><input id="param_slider" type="range" min=0 max=500 step="1" name="weight" value=75 onchange="SliderUpdate(value, 'param_show')">
+        <output for="param_text" id="param_show"></output><br>
+    </form>
+    <p2 id="accel_text">Acceleration:</p2>
+    <div id="accel_meter_neg"></div>
+    <div id="accel_meter_pos"></div>
+    <div id="accel_meter_zero"></div>
+</div>
+<div id="about_div">
+    <p1 id="about_click" onClick="show_about()">How To Play</p1>
+
+    <p1 id="about_text">
+    <b>ONLY WORKS IN FIREFOX OR CHROME CURRENTLY. </b>Use the right and left arrow keys to go left and right.  The volume of audio input controls the upward force (sorry, if your computer doesn't have a microphone, you can't play).  You can adjust the weight of the spaceship / the sensitivity using the slider above.  I recommend finding some uniform kind of sound you can make - humming, blowing air through your lips, or just blowing towards the mic all work.  Advanced people might try to sing a song.  Game copyright Milo Johnson 2015 - but Milo Johnson does not accept any responsibility for your friends, housemates, coworkers, or parents thinking you are going crazy because you keep making weird noises at your computer.  
+    </p1>
+</div>
+</body>
+</html>
+
+
+
+
+
+
