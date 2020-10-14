@@ -1,0 +1,97 @@
+Edge,Type,Edge.ID,chromosome,insertion_edge,Gene.hit,Descrip,QTL1,QTL2
+GTTTAGCTTCCGTTG,Experiment,668,chr09,99074,in RPL16A,Ribosomal 60S subunit protein L16A,chr14_376315;371959;398755,chr04_158427;0;174090
+GTGTGATTACTAAAT,Experiment,126,chr09,99489,nearby RPL16A,Component of Shu complex (aka PCSS complex)|Ribosomal 60S subunit protein L16A,chr14_376315;374661;393024,chr15_135275;97994;212114
+CTATCAAGGCTTAAT,Experiment,264,chr04,218354,in RPL35B,Ribosomal 60S subunit protein L35B,chr14_385704;374661;393024,chr04_107931;91319;135874
+CATCAATGAGGCAGT,Experiment,201,chr15,161115,nearby YOL085W-A,Dubious open reading frame,chr15_154799;145519;186481,NA
+TCAAAGCATGAAAAA,Experiment,500,chr04,1081712,in SUM1,Transcriptional repressor that regulates middle-sporulation genes,chr14_368185;354459;400978,chr15_471091;455596;476171
+GTAATCTGACTCTAG,Experiment,648,chr06,220821,in RPL2A,Ribosomal 60S subunit protein L2A,chr14_368185;367096;393024,chr04_1057363;1047043;1109356
+CTTTCTTGTGTATTT,Experiment,750,chr16,673212,in BRR1,snRNP protein component of spliceosomal snRNPs,chr14_376315;367096;411669,chr12_690164;676078;722747
+CAAGTTCGGCGAAAT,Experiment,17,chr06,225566,in PHO4,Basic helix-loop-helix (bHLH) transcription factor of the myc-family,NA,NA
+TACACCAATTACACT,Experiment,762,chr15,161141,nearby YOL085W-A,Dubious open reading frame,NA,NA
+GTTAAATCAACAGTT,Experiment,33,chr05,395676,in SLX8,Subunit of Slx5-Slx8 SUMO-targeted ubiquitin ligase (STUbL) complex,chr14_381891;361531;433150,chr05_378582;342703;398640
+CAATCTTGAATTGAT,Experiment,645,chr12,931374,in RPL31B,Ribosomal 60S subunit protein L31B,chr14_376315;374661;381891,chr14_470303;437957;492376
+GGTGGAAGTAGCAGT,Experiment,745,chr06,225545,in PHO4,Basic helix-loop-helix (bHLH) transcription factor of the myc-family,NA,NA
+CTTGCAAGTGTAATT,Experiment,328,chr04,38452,nearby OST4,Regulator of filamentous growth|Subunit of the oligosaccharyltransferase complex of the ER lumen|Zinc finger protein containing five transmembrane domains,chr14_393024;354459;442392,chr04_45364;0;62076
+TAGACGGACATCTTC,Experiment,594,chr12,931254,in RPL31B,Ribosomal 60S subunit protein L31B,chr14_376315;374661;385704,NA
+CCAACACAGGCTTCG,Experiment,72,chr05,157055,in NOP16,Constituent of 66S pre-ribosomal particles,chr14_376315;374661;381891,chr14_466590;457245;481897
+ATAGTCGATTAAGAT,Experiment,699,chr10,75385,nearby RPS22A,Protein component of the small (40S) ribosomal subunit,chr14_393024;367096;411669,NA
+TCATAGGTATCTCGC,Experiment,81,chr05,338178,in TRP2,Anthranilate synthase,chr05_283422;251650;312673,chr13_75046;0;93860
+GTTTGTTTTGGGAAA,Experiment,410,chr07,526948,nearby VMA7,Gamma-aminobutyrate (GABA) transaminase|Subunit F of the V1 peripheral membrane domain of V-ATPase,NA,NA
+GAGAATGAAGGACAG,Experiment,370,chr08,216621,in RSC30,Component of the RSC chromatin remodeling complex,chr12_899065;876713;947535,chr07_990976;976936;1026099
+AAAACATTATCAAAG,Experiment,873,chr05,338454,in TRP2,Anthranilate synthase,chr05_283422;253824;321620,chr13_839614;774680;861519
+CCGTTAGTATCGCTA,Experiment,222,chr04,429086,in SLX5,Subunit of the Slx5-Slx8 SUMO-targeted Ub ligase (STUbL) complex,chr14_356363;349582;417423,NA
+CTCTTGAGAATACTT,Experiment,286,chr05,395988,in SLX8,Subunit of Slx5-Slx8 SUMO-targeted ubiquitin ligase (STUbL) complex,chr14_376315;368185;417423,NA
+AGTTTATAAAAAATT,Experiment,753,chr12,369653,nearby CCW12,Cell wall mannoprotein|Thiol-specific peroxiredoxin,chr14_376315;367845;402771,chr14_470303;414983;481897
+ATCGTTGGCATTTGG,Experiment,103,chr05,475172,in OXA1,Mitochondrial inner membrane insertase,chr05_374811;327966;407781,chr14_466590;420065;495919
+ATAGAGCGGCGTTGA,Experiment,101,chr09,255163,in GPP1,Constitutively expressed DL-glycerol-3-phosphate phosphatase,chr12_646707;611975;674081,chr13_50514;0;80821
+CTAGTTGTATAGCCA,Experiment,161,chr07,675682,in RRP46,Exosome non-catalytic core component,NA,NA
+CGCGATCAATCCTCT,Experiment,448,chr09,374564,in MSL1,U2B component of U2 snRNP,NA,NA
+CGAACAGAAACACAA,Experiment,690,chr13,67611,nearby NUP188,H/ACA box small nucleolar RNA (snoRNA)|Subunit of the inner ring of the nuclear pore complex (NPC),chr12_629443;614710;706749,chr05_374811;342703;464489
+GCTGCGGAGCCTCAG,Experiment,405,chr16,69636,in HFI1,Adaptor protein required for structural integrity of the SAGA complex,chr14_445768;414983;492376,NA
+CTAAGCAGTCTTCTC,Experiment,403,chr14,492169,in LAT1,Dihydrolipoamide acetyltransferase component (E2) of the PDC,chr14_445768;420065;492376,NA
+TAATATTGTTTTGCG,Experiment,28,chr05,472172,in UBP3,Ubiquitin-specific protease involved in transport and osmotic response,NA,NA
+TGGAGTCTTTGTTGA,Experiment,756,chr09,281357,in NOT3,"Component of the CCR4-NOT core complex, involved in mRNA decapping",chr14_373136;368185;385704,chr05_366281;334619;378582
+CATCACCGTGCTCAT,Experiment,317,chr09,118030,in STH1,ATPase component of the RSC chromatin remodeling complex,NA,NA
+TCGAAAGCACAGTAG,Experiment,377,chr08,189888,nearby SRB2,Subunit of the RNA polymerase II mediator complex,NA,NA
+CGAATGCCATACAAA,Experiment,168,chr04,918409,in SIR4,SIR protein involved in assembly of silent chromatin domains,chr14_376315;371959;393024,chr08_115972;72694;146815
+GTCACCGGCACTAAC,Experiment,905,chr04,918356,in SIR4,SIR protein involved in assembly of silent chromatin domains,chr14_381891;374661;402771,chr08_115972;72694;146815
+ATAATTTTCATCCAC,Experiment,702,chr07,556242,in RPL26B,Ribosomal 60S subunit protein L26B,chr14_376315;371959;401893,chr14_470303;420065;492376
+ATATTGAGTAAGTAC,Experiment,188,chr12,673959,nearby YLR264C-A,Protein involved in regulation of nonhomologous end joining|Putative protein of unknown function,chr14_393814;374661;398755,NA
+CATATGCATTCCTTG,Experiment,90,chr13,317448,in MAC1,Copper-sensing transcription factor,NA,NA
+TTATATTTATTTGCT,Experiment,166,chr12,1020124,in SIR3,Silencing protein,chr14_376315;374661;402771,chr08_115972;72694;146815
+CAATTTCAACGTTGT,Experiment,457,chr12,251466,in SPT8,Subunit of the SAGA transcriptional regulatory complex,chr14_393024;367845;402771,NA
+GCCCTCGAAACCTAT,Experiment,875,chr12,251599,in SPT8,Subunit of the SAGA transcriptional regulatory complex,chr14_385704;368185;411669,chr14_459667;437957;485550
+CTACTTACAACGGAA,Experiment,274,chr05,378817,in KAP123,Karyopherin beta,chr14_369031;367096;411355,chr14_466590;442718;481897
+ACAAGTTTTACAGTT,Experiment,517,chr01,115761,in FUN30,Snf2p family member with ATP-dependent chromatin remodeling activity,chr14_376315;368185;393024,chr12_490737;386306;510270
+CTATGCATTTACTCA,Experiment,31,chr05,326495,in GET2,Subunit of the GET complex,chr14_393024;368185;398755,chr14_433150;406204;481897
+AGAACATCATCTACA,Experiment,431,chr04,693871,in DPB4,Subunit of DNA pol epsilon and of ISW2 chromatin accessibility complex,chr14_376315;374661;381891,chr14_466590;437957;481897
+AGATTCATCCCATGG,Experiment,961,chr07,58476,"in ADE5,7",Enzyme of the 'de novo' purine nucleotide biosynthetic pathway,chr04_1248523;1172903;1302523,NA
+ATTATCATCGCCATC,Experiment,374,chr08,177367,in PIH1,Component of the conserved R2TP complex (Rvb1-Rvb2-Tah1-Pih1),NA,NA
+TCAAATGATGAGGAT,Experiment,676,chr01,114934,in FUN30,Snf2p family member with ATP-dependent chromatin remodeling activity,chr14_376315;368185;393024,chr12_490737;386306;507814
+GAGTGCTTCAAAGTT,Experiment,724,chr10,73923,in RPS14B,Protein component of the small (40S) ribosomal subunit,chr14_376315;371959;393814,chr04_51736;0;73761
+TCAGAGCATTGGCCT,Experiment,451,chr15,1013792,in PDE2,High-affinity cyclic AMP phosphodiesterase,chr15_161768;133313;189231,chr14_492376;466105;511617
+CGTCAAGACCTTCTA,Experiment,204,chr04,866159,in UME6,Rpd3L histone deacetylase complex subunit,NA,NA
+TCTTGGAGGTGAATG,Experiment,53,chr10,642829,in STE24,Highly conserved zinc metalloprotease,chr14_385704;309214;406755,NA
+GCAAGAAAGAAACCC,Experiment,804,chr11,613929,nearby SRP40,Nucleolar serine-rich protein,NA,NA
+GCTAATTTCAAGAAT,Experiment,163,chr15,202476,in RTG1,Transcription factor (bHLH) involved in interorganelle communication,NA,NA
+AGAAGACGACGATGA,Experiment,871,chr14,439176,in OCA1,Putative protein tyrosine phosphatase,chr14_376315;374661;385704,chr04_62076;0;135874
+TAACCTCGCGCTGAG,Experiment,850,chr08,190430,nearby NCP1,NADP-cytochrome P450 reductase,chr12_708187;626424;728637,chr05_379328;361239;407781
+AGTGTTAATCAGACC,Experiment,552,chr13,592732,nearby PAH1,Mg2+-dependent phosphatidate (PA) phosphatase,NA,NA
+CATTGTCGGACGCTT,Experiment,721,chr05,195499,in GPA2,Nucleotide binding alpha subunit of the heterotrimeric G protein,NA,NA
+GTTCAGCTTTGATCG,Experiment,436,chr12,955654,in VPS36,Component of the ESCRT-II complex,chr05_378582;342703;399136,chr04_703384;696694;745764
+GTTGAACTGGTTGTT,Experiment,197,chr12,440958,in STM1,Protein required for optimal translation under nutrient stress,chr14_433150;420065;485550,NA
+CATTTATGGCTATCT,Experiment,19,chr04,317167,in VAM6,Guanine nucleotide exchange factor for the GTPase Gtr1p,chr13_743499;715097;761317,chr14_437957;414983;492376
+ACAGGGCAGCTCCCG,Experiment,229,chr13,243668,in TRM9,tRNA methyltransferase,chr14_411355;350503;433150,chr13_234329;221398;303265
+CCAAGACCGTGTAAA,Experiment,104,chr14,57098,in MCK1,Dual-specificity ser/thr and tyrosine protein kinase,chr14_367522;335874;400978,NA
+TATGCCCTTCTTCTG,Experiment,490,chr09,152566,in HOS4,Subunit of the Set3 complex,chr14_376315;367845;402771,chr14_437957;420065;492376
+CAAGGATCCCCGTAG,Experiment,280,chr13,818356,in BUL1,Ubiquitin-binding component of the Rsp5p E3-ubiquitin ligase complex,chr13_45801;0;57813,NA
+TTTAACTCACCGTAA,Experiment,399,chr12,925283,nearby SFP1,Dubious open reading frame|Regulates transcription of ribosomal protein and biogenesis genes,chr15_189231;181433;195644,chr14_445768;420065;495919
+TTAATTAGAGGTATG,Experiment,307,chr04,333143,in CBS1,Mitochondrial translational activator of the COB mRNA,NA,NA
+CTTGATGGCTGAAAG,Experiment,388,chr06,211221,in PTR3,Component of the SPS plasma membrane amino acid sensor system,NA,NA
+AATGATACCATTTTT,Experiment,51,chr12,846423,in VPS38,Part of a Vps34p phosphatidylinositol 3-kinase complex,NA,NA
+GGTTGCCCAGAAGTA,Experiment,881,chr04,242790,in UBP1,Ubiquitin-specific protease,chr14_376315;371959;402771,chr08_101016;70660;146815
+TCAACAACCTATGCA,Experiment,180,chr04,864603,in EBS1,Protein involved in translation inhibition and nonsense-mediated decay,chr14_373136;367845;393024,NA
+CCAGGATGTACCGCC,Experiment,872,chr12,163045,in SSK1,Cytoplasmic phosphorelay intermediate osmosensor and regulator,chr14_376315;368185;411669,chr14_466590;420065;503521
+GAACTCAGGTTCCAT,Experiment,990,chr13,594451,in MME1,Transporter of the mitochondrial inner membrane that exports magnesium,NA,NA
+ATGGCGATGGTCTTG,Experiment,467,chr12,878667,in CSR1,Phosphatidylinositol transfer protein,chr12_649839;626424;677677,chr01_46724;33503;55794
+TGATCATCACGGGAC,Experiment,888,chr01,47217,in FLC2,Putative calcium channel involved in calcium release under hypotonic,chr14_401893;374661;402771,chr14_470303;420065;492376
+ATTATCAAGTGCCAG,Experiment,402,chr12,572679,in CPR6,Peptidyl-prolyl cis-trans isomerase (cyclophilin),NA,NA
+TTTTGCATTTAGGCG,Experiment,847,chr08,423092,in MPC2,Highly conserved subunit of the mitochondrial pyruvate carrier (MPC),chr14_401893;371959;411355,chr13_45801;0;56369
+ACCACCGGTCCTGCC,Experiment,603,chr07,661953,nearby UTP22,"Component of the small-subunit processome|Threonine tRNA (tRNA-Thr), predicted by tRNAscan-SE analysis",chr14_376315;371959;381891,chr14_470303;437957;492376
+AAAAGAAAAATGTAT,Experiment,758,chr16,859836,nearby KRE6,Protein of unknown function|Type II integral membrane protein,chr14_401893;401253;411669,chr04_45364;0;62076
+TTTATAAATCAATAG,Experiment,580,chr05,372099,nearby NUP157,Monopolin|Subunit of the inner ring of the nuclear pore complex (NPC),chr14_376315;374661;393024,chr14_466590;442392;481897
+ATGAAGTTCATAATG,Experiment,325,chr12,195255,nearby SNF7,cis-Golgi t-SNARE syntaxin|One of four subunits of the ESCRT-III complex,NA,NA
+AGTGTATGATAATAT,Experiment,688,chr14,56284,nearby KRI1,Dual-specificity ser/thr and tyrosine protein kinase|Essential nucleolar protein required for 40S ribosome biogenesis,chr14_373136;368185;385704,NA
+CTTGATCAATCAAAA,Experiment,995,chr04,1333471,in PPM1,Carboxyl methyltransferase,chr15_150111;132501;195644,NA
+TCGATAGAATTTACT,Experiment,482,chr13,695821,in SCJ1,One of several homologs of bacterial chaperone DnaJ,chr14_401893;371959;406755,NA
+CTCGCTAATACTCCT,Experiment,369,chr15,521604,in RGS2,Negative regulator of glucose-induced cAMP signaling,NA,NA
+GTACAAGAAATTTTG,Experiment,631,chr15,1013217,nearby PDE2,Flap-structured DNA-binding and RNA-binding protein|High-affinity cyclic AMP phosphodiesterase,NA,NA
+AAAAGCGACATTTCT,Experiment,131,chr04,1192480,in EAF1,Component of the NuA4 histone acetyltransferase complex,NA,NA
+TTAGTCTTTCCATCA,Experiment,599,chr13,130707,in COG8,Component of the conserved oligomeric Golgi complex,chr14_376315;341766;433150,NA
+CGATGATGATGATGA,Reference,248,chr15,1060169,CONTROL,Control (putatively neutral intergenic insertion),NA,NA
+ACAGTTGACGGACAG,Experiment,219,chr14,427664,nearby MET4,Leucine-zipper transcriptional activator,NA,NA
+ACAACCTACCTGCTA,Reference,942,chr14,117184,CONTROL,Control (putatively neutral intergenic insertion),NA,NA
+GTTGGGCGCTTAAAG,Reference,621,chr13,759272,CONTROL,Control (putatively neutral intergenic insertion),NA,NA
+TATATTGAACTTTAC,Reference,6,chr08,417454,CONTROL,Control (putatively neutral intergenic insertion),NA,NA
+TCAAAACGGAGTGTT,Reference,783,chr04,1125096,CONTROL,Control (putatively neutral intergenic insertion),NA,NA
+ATTAATACTTTGCAG,Experiment,209,chr05,470562,in UBP3,Ubiquitin-specific protease involved in transport and osmotic response,NA,NA

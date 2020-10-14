@@ -1,0 +1,97 @@
+<html>
+
+<title>Interactive Exploration of a Combinatorically Complete Empirical Fitness Landscape</title>
+
+<head>
+
+<link rel='stylesheet' href='css/CRISPR.css' />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script src="d3/d3.min.js"></script>
+<script src="js/CRISPR.js"></script>
+<script src="js/SliderChange.js"></script>
+
+</head>
+
+<body onload="loaddata()">
+
+<div id="content_container">
+
+<h1 id="paper_title">CRISPR ACTION TOWN</h1>
+<h2 id="paper_author">ft. ALEX + CHRIS</h2>
+
+<div id="full_diagram">
+
+  <div id="state_div">
+ 	<div id="state_title_div">
+        <h3 id="state_title">State of 10 mutations</h3>
+    </div>
+    <!--THESE ARE THE TRAIT BLOCKS-->
+    <div id="state">
+    </div>
+    <h3 id="current_state"></h3>
+  </div>
+  
+  <div id="pheno_result" class="result">
+    <p1 id="pheno_title">Fitness</p1>
+    <hr />
+    <p2 id="pheno_value"></p2>
+  </div>
+  
+	<div id="chart_div">
+  </div>
+  <div id=sim_div>
+    <h4>Simulate Change</h4>
+    <hr />
+    <form id=sim_form>
+        Accept (Nearly) Neutral Mutations? <input type="checkbox" name="neutral_check" value="neutral"><br>
+        Range to Consider Nearly Nuetral: <br><input id="tol_text" type="range" min=0.0 max=0.1 step="0.0001" name="tolerance" value=0.0 onchange="SliderUpdate(value, 'tolerance_show')">
+        <output for="tol_text" id="tolerance_show"></output><br>
+    </form>
+    <hr />
+    <div id="sim_buttons">
+        <div id="update_button" onClick="update_sim()">
+            <p4>Update<br>options</p4>
+        </div>
+        <div id="sim_button" onClick="start_simulating()">
+            <p1>GO</p1>
+        </div>
+        <div id="stop_button" onClick="stop_simulating()">
+            <p1>STOP</p1>
+        </div>
+    </div>
+    <hr />
+    <p5>The simulation will stop automatically every 800 steps</p5>
+    <hr />
+    <div id="new_run_button" onClick="new_run()">
+        <p1>NEW RUN</p1>
+    </div>
+    <div id="reset_button" onClick="reset()">
+        <p1>RESET</p1>
+    </div>
+  </div>
+ </div>
+</div>
+
+</div>
+ 
+</body>
+
+<div id="footer_div">
+    <div id="footer_contact">
+        <p4 id="contact_text">milo.s.johnson.13 AT gmail</p4>
+    </div>
+</div>
+
+</html>
+
+
+
+
+
+
+
+
+

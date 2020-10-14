@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/* CSS Document */ 
+/*root stylesheet*/
+
+
+
+#game_div {
+	position:relative;
+	width:1100px;
+	height:660px;
+	margin: 0px auto;
+}
+
+#crash_div {
+    position:absolute;
+    left:100px;
+    top:100px;
+    height:300px;
+    width:900px;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari */
+    transform: rotate(20deg);
+}
+
+#crash_div h1 {
+    font-size:7.0em;
+}
+
+#high_score_div {
+    position:absolute;
+    left:200px;
+    top:150px;
+    height:500px;
+    width:700px;
+    display:none;
+}
+
+#high_score_title {
+    margin: 0px auto;
+}
+
+#practice_text {
+    position:absolute;
+    left:250px;
+    top:150px;
+    margin: 0px auto;
+    font-size:2.0em;
+}
+
+#feedback_text {
+    position:absolute;
+    left:400px;
+    top:450px;
+    margin: 0px auto;
+    font-size:4.0em;
+}
+
+#crash_div h1 {
+    font-size:7.0em;
+}
+
+#score_text {
+    position:absolute;
+    left:0px;
+}
+
+#accel_text {
+    position:absolute;
+    left:770px;
+    top:0px;
+    font-size:0.85em;
+}
+
+#sim_param_form {
+    position: absolute;
+    left: 250px;
+    top: 10px;
+}
+
+#param_slider {
+    width:300px;
+}
+
+#accel_meter_pos {
+    position:absolute;
+    left:800px;
+    top:20px;
+    background-color:green;
+    width:100px;
+    height:30px;
+}
+#accel_meter_neg {
+    position:absolute;
+    right:100px;
+    top:20px;
+    background-color:red;
+    width:100px;
+    height:30px;
+}
+#accel_meter_zero {
+    position:absolute;
+    right:99px;
+    top:20px;
+    background-color:black;
+    width:2px;
+    height:30px;
+}
+
+#game_canvas {
+    position:relative;
+    margin:0px auto;
+    width:1100px;
+    height:660px;
+    background-color:black;
+    
+    
+    image-rendering: optimizeSpeed;             
+    image-rendering: -moz-crisp-edges;          
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: -o-crisp-edges;            
+    image-rendering: pixelated;                 
+    -ms-interpolation-mode: nearest-neighbor;   
+}
+
+#bottom_stuff {
+	position:relative;
+	width:900px;
+	height:100px;
+	margin: 0px auto;
+}
+
+#about_div {
+    position:relative;
+	width:900px;
+	margin: 0px auto;
+}
+
+#about_click {
+    text-decoration:underline;
+}
+#about_click:hover {
+    color:red;
+    opacity:0.8;
+}
+#about_click:active {
+    opacity:0.5;
+}
+
+#about_text {
+    display:block;
+    text-align:left;
+}
+

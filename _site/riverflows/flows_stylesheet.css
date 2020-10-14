@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* CSS Document */ 
+/*root stylesheet*/
+
+#main_div {
+    position:relative;
+    height:1100px;
+    width:100%;
+}
+
+#flow_div {
+    position:relative;
+	margin:0px auto;
+	height:700px;
+	width:1060px;
+}
+
+#all_circles {
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+#all_tooltips {
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+
+#loading_text {
+    display:none;
+}
+
+#all_the_stuff {
+    display:none;
+}
+
+.fancy_tooltip {
+    position:absolute;
+    background-color:gray;
+    font-size:0.8em;
+    opacity:0.95;
+    width:175px;
+    text-align:left;
+    display:none;
+}
+
+
+#back_image {
+    opacity:0.8;
+}
+
+.flow {
+	fill:blue;
+	opacity:0.8;
+}
+
+#animate_button {
+    margin:0px auto;
+    width:150px;
+    height:30px;
+    background-color:#3384F1;
+}
+
+#animate_button:hover {
+    opacity:0.8;
+}
+
+#animate_button:active {
+    opacity:0.8;
+    box-shadow:0 0 0 2px black inset;
+}
+

@@ -1,0 +1,90 @@
+@charset "UTF-8";
+/* CSS Document */ 
+/*root stylesheet*/
+
+
+#big_div {
+    position: relative;
+    margin: 0px auto;
+}
+
+#save_file_button {
+    position: relative;
+    margin: 5px auto;
+    background-color: #CCCCCC;
+    width: 200px;
+    height: 26px;
+}
+
+#save_file_button:hover {
+    opacity: 0.5;
+}
+
+#primer_zone {
+    position: relative;
+    margin: 0px auto;
+    width: 1400px;
+}
+
+#graph_spot {
+    position:absolute;
+    margin: 0px auto;
+    left: 200px;
+    top: 0px;
+    height: 60px;
+}
+
+#primer_name_title {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+
+#primer_title {
+    position: absolute;
+    left: 670px;
+    top: 40px;
+}
+
+.primer_input {
+    position: absolute;
+    left: 200px;
+    width: 1100px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+.primer_name {
+    position: absolute;
+    left: 0px;
+    width: 150px;
+    height: 30px;
+    border: none;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+
+.primer_input {
+    color: #001F4F;
+}
+
+.primer_input:active {
+    -webkit-appearance:none;
+    border: none;
+    color: #001F2F;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}

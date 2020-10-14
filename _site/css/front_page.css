@@ -1,0 +1,120 @@
+@charset "UTF-8";
+/* CSS Document */ 
+
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+body {
+    margin:0px;
+	background-color: #FFFBF7;
+	font-size: 16px;
+	list-style-type: none;
+	text-align:center;
+	cursor:default;
+	font-family:"Abel", Fallback, sans-serif;
+}
+
+h1, h2 {
+    margin-bottom:10px;
+}
+
+p1 {
+    font-size:1.3em;
+}
+
+p3 {
+    font-size:0.7em;
+}
+
+p4 {
+    margin-bottom:0px;
+}
+
+a {
+	color: #090;
+	text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+    opacity:0.8;
+}
+
+strong {
+    font-size:1.2em;
+    font-weight:bold;
+}
+
+#footer_div {
+    width:100%;
+}
+
+#footer_contact {
+    padding:0px;
+    padding-top:10px;
+    width:100%;
+    height:50px;
+    background-color:#111115;
+    color:white;
+}
+
+#big_title {
+    position:relative;
+    margin:auto;
+    width:600px;
+}
+
+.line_divider {
+    margin:auto;
+    height:4px;
+    width:40%;
+    background-color:#FF6F00;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.line_divider_2 {
+    margin:auto;
+    height:4px;
+    width:15%;
+    background-color:#147FFF;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-bottom:10px;
+}
+
+.line_divider_3 {
+    margin:auto;
+    height:4px;
+    width:25%;
+    background-color:#7F3FF5;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-bottom:10px;
+}
+
+#home_link {
+    position:absolute;
+    left:50px;
+    top:20px;
+}
+
+#home_link a {
+    color:white;
+}
+
+#home_link_black {
+    position:absolute;
+    left:50px;
+    top:20px;
+}
+
+#home_link_black a {
+    color:black;
+}
+
+.dark_page {
+   background-color: #0F0B07; 
+   color:white;
+}
