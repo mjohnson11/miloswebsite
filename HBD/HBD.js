@@ -62,7 +62,7 @@ var drag_func;
 
 fonts = ["Alfa Slab One", "Architects Daughter", "Pacifico", "Piedra", "Sansita Swashed", "Staatliches", "Comic Sans MS", "Courier New"];
 font_colors = ["red", "aqua", "blue", "yellow", "black", "purple", "pink"];
-font_drops = [true, true, true, true, true, true];
+font_drops = [true, true, true, true, true, true, true];
 font_drop_times = [68, 70, 72, 85, 90, 93, 100];
 text_drops = ["DAMN",  "WHO DAT", "OVER THERE", "HOPE YOU'RE HAVING A LOVELY DAY", "I HOPE THIS MESSAGE FINDS YOU WELL", "IN THESE TRYING TIMES", "I AM PROCRASTINATING A FELLOWSHIP APPLICATION"];
 text_sizes = [2, 1.3, 1.3, 0.5, 0.6, 0.3];
