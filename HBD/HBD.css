@@ -76,3 +76,7 @@ path {
   top: 0px;
   z-index: 2;
 }
+
+#pt_container {
+  display: none;
+}

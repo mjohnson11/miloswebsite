@@ -38,6 +38,8 @@ var data_len = data.length;
 var audioSource, audioContext, analyser, sound_analyser;
 var sound = document.getElementById('sound');
 
+var pts_sound;
+
 var ac = 0;
 
 var aud_obj;
@@ -163,6 +165,7 @@ const DrawingObj = {
     }
   },
   star: {
+    onclick: null,
     name: 'star',
     make_one: function() {
       let cx0 = (Math.random()*0.4)*(Math.floor(Math.random()/0.5)-0.5)
@@ -174,7 +177,7 @@ const DrawingObj = {
         .attr('fill', current_col)
         .attr('class', 'star')
         .attr('opacity', 1);
-      drawn.push({el: tmp, type: 'star', atr: 'r', factor: 0.5*afactor/10, r: radial_dist((cx0+1)*(w/2), (cy0+1)*(h/2))*data_len, x0: cx0, y0: cy0, t0: sound.currentTime, scaling_direction:  current_freq_scale, exists: true});
+      drawn.push({el: tmp, type: 'star', atr: 'r', factor: 0.5*afactor/10, r: radial_dist((cx0+1)*(w/2), (cy0+1)*(h/2))*data_len, x0: cx0, y0: cy0, t0: (pts_sound._ctx.currentTime-start_time), scaling_direction:  current_freq_scale, exists: true});
       if (color_method == 'cycle_auto') current_col = getRandomColor();
     },
     animate: function(rec, fake_amp=false) {
@@ -185,7 +188,7 @@ const DrawingObj = {
           rec.el.node.remove();
           rec.exists = false;
         } else {
-          let t = (sound.currentTime - rec.t0)/10;
+          let t = ((pts_sound._ctx.currentTime-start_time) - rec.t0)/10;
           rec.el.attr("cx", (rec.x0*amp*(1+t)+1)*(w/2));
           rec.el.attr("cy", (rec.y0*amp*(1+t)+1)*(h/2));
         }
@@ -193,6 +196,7 @@ const DrawingObj = {
     }
   },
   squirrel: {
+    onclick: null,
     name: 'squirrel',
     make_one: function() {
       let cx0 = Math.random()
@@ -218,6 +222,7 @@ const DrawingObj = {
     }
   },
   text: {
+    onclick: null,
     name: 'text',
     make_one: function(text, fontsize_base) {
       let cx0 = Math.random()*0.5
@@ -474,10 +479,10 @@ function get_amplitude(direction_method, factor, x, y, r, fake_amp) {
 function animatron () {
   ac += 1;
   //if (ac % (Math.floor(ac/10)+1) == 0) {
-  if ((sound.currentTime > 3) && (d3.selectAll(".star")["_groups"][0].length < 1000)) {
+  if (((pts_sound._ctx.currentTime-start_time) > 3) && (d3.selectAll(".star")["_groups"][0].length < 1000)) {
     DrawingObj['star'].make_one();
   }
-  if ((sound.currentTime > 35.8) && not_dropped) {
+  if (((pts_sound._ctx.currentTime-start_time) > 35.8) && not_dropped) {
     not_dropped = false;
     for (let el of existing_lines) {
       DrawingObj['wavy'].make_from_rec(el);
@@ -486,21 +491,27 @@ function animatron () {
     document.getElementById("pigeon1").style.display="block";
     document.getElementById("pigeon2").style.display="block";
   }
-  if (sound.currentTime > squirrel_time) {
+  if ((pts_sound._ctx.currentTime-start_time) > squirrel_time) {
     squirrel_time += 15;
     DrawingObj['squirrel'].make_one();
   }
   for (let i=0; i<font_drop_times.length; i++) {
-    if ((sound.currentTime>font_drop_times[i]) && font_drops[i]) {
+    if (((pts_sound._ctx.currentTime-start_time)>font_drop_times[i]) && font_drops[i]) {
       font_drops[i] = false;
       DrawingObj['text'].make_one(text_drops[i], text_sizes[i]);
     }
   }
-  analyser.getByteFrequencyData(data); 
+  data = pts_sound.freqDomain(); 
   for (var i = 0; i < drawn.length; i++) {
     DrawingObj[drawn[i].type].animate(drawn[i])
   }
 }
+Pts.quickStart( "#pt", "#eae6ef" );
+var bufferLoaded = false;
+Sound.loadAsBuffer( "WHODAT.mp3" ).then( s => {
+  pts_sound = s;
+  bufferLoaded = true;
+}).catch( e => console.error(e) );
 
 function DO_IT(){
 
@@ -528,22 +539,20 @@ function DO_IT(){
     .on("end", dragended);
 
   dummy_svg.call(drag_func);
-  
-  sound.src = 'WHODAT.mp3';
-  audioContext = new AudioContext();
-  audioSource = audioContext.createMediaElementSource(sound);
-  sound_analyser = audioContext.createAnalyser(); // will be dormant when audio input is used
-  analyser = sound_analyser;
-  // we have to connect the MediaElementSource with the analyser 
-  audioSource.connect(analyser);
-  analyser.connect(audioContext.destination);
-  data = new Uint8Array(analyser.frequencyBinCount);
-  data_len = data.length;
-  sound.play();
-  not_playing = false;
-  intervalhandle = setInterval(function(){animatron()}, 1);
-  
+
+  if (bufferLoaded) {
+    pts_sound.analyze(2048); // recreate buffer again
+    pts_sound.start();
+    start_time = pts_sound._ctx.currentTime;
+    data = new Uint8Array(1024);
+    data_len = data.length;
+    not_playing = false;
+    console.log('here');
+    intervalhandle = setInterval(function(){animatron()}, 1);
+  }
+
 }
+
 
 function get_paths() {
   let existing_lines = [];
