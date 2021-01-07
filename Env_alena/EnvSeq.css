@@ -253,13 +253,34 @@ input[type="file"] {
   display: block
 }
 
+.foreign_obj {
+  position: relative;
+}
+
 .text_input_filter {
-  width:95%;
-  margin-top: 5px;
+  width:40%;
+  position: absolute;
+  left: 55%;
+  top: 0px;
   background-color: white;
 }
 
 .text_input_description {
-  width:100%;
-  margin: 0px;
+  position: absolute;
+  left:0px;
+  top:0px;
+  width:50%;
+  margin-top:2px;
+}
+
+.image_content {
+  display: none;
+}
+
+.WOW_data_group:hover .image_content {
+  display: block
+}
+
+.clicked_data .image_content {
+  display: block;
 }

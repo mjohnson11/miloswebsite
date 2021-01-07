@@ -5,6 +5,8 @@ var w;
 var h;
 
 var top_data;
+var mut_data;
+var s_x_data;
 var main_svg;
 var dfe_graph;
 var s_x_graph;
@@ -22,12 +24,12 @@ var WOW_content_counter = 0;
 var WOW_data_counter = 0;
 
 var env_color = { "YPD": "#000000",
-                  "37_SC5": "#0173b2",
-                  "37_SC7": "#de8f05",
                   "30_SC3": "#029e73",
-                  "37_SC3": "#d55e00",
                   "30_SC5": "#cc78bc",
-                  "30_SC7": "#ca9161" };
+                  "30_SC7": "#0173b2",
+                  "37_SC3": "#d55e00",
+                  "37_SC5": "#ca9161",
+                  "37_SC7": "#de8f05"};
 
 function is_that_a_number(stringy_thing) {
   // guesses if a string is a number
@@ -378,6 +380,37 @@ class WowSeriesPlot {
   }
 }
 
+class WowImg {
+
+  constructor(dimensions, parent_data, xvar, color_by=null, line_weight=null) {
+    WOW_graph_counter += 1;
+    this.parent_data = parent_data;
+    this.x = xvar;
+    this.x_dtype = this.parent_data.dtypes[xvar];
+    this.graph_num = WOW_graph_counter;
+    this.dimensions = dimensions;
+    [this.left, this.top, this.w, this.h] = dimensions;
+    let self = this;
+    this.graph_stuff = this.parent_data.svg.append('g');
+
+    this.parent_data.svg.selectAll('.' + self.parent_data.wow_data_class)
+        .append('image')
+        .attr('class', 'image_content content_'+String(self.graph_num))
+        .attr('preserveAspectRatio', "xMidYMid meet")
+        .attr('x', this.left)
+        .attr('y', this.top)
+        .attr('width', this.w)
+        .attr('height', this.h)
+        .attr('href', function(d) { return d[self.x]; });
+  }
+
+  kill() {
+    this.plot = false;
+    this.graph_stuff.remove();
+    this.parent_data.svg.selectAll('.content_'+String(this.graph_num)).remove();
+  }
+}
+
 class WowData {
   constructor(data, svg, parent_data=null) {
     /*
@@ -454,6 +487,12 @@ class WowData {
             return 'block';
           });
       });
+  }
+
+  kill() {
+    for (let sf of this.search_filters) {
+      sf.foreignObject.remove();
+    }
   }
 
   infer_dtypes() {
@@ -565,11 +604,15 @@ function go() {
     .attr('height', dimensions[3]);
   d3.tsv(file).then(function(data) {
     top_data = new WowData(data, main_svg);
-    top_data.graphs.push(new WowMarkerPlot([100, 50, 250, 200], top_data, 'Avg_GR', 'DFE_mean', color_by=['Environment', env_color]));
+    top_data.graphs.push(new WowMarkerPlot([100, 70, 250, 200], top_data, 'Avg_GR', 'DFE_mean', color_by=['Environment', env_color]));
     top_data.graphs[0].color_key();
-    top_data.graphs.push(new WowMarkerPlot([450, 50, 250, 200], top_data, 'GR_max', 'GR_std_max_excluded'));
-    top_data.graphs.push(new WowSeriesPlot([800, 30, 350, 90], top_data, 'Env_series', 'Env_GR'));
-    top_data.graphs.push(new WowSeriesPlot([800, 170, 350, 90], top_data, 'Env_series', 'Env_DFE_mean'));
+    top_data.graphs.push(new WowMarkerPlot([450, 70, 250, 200], top_data, 'GR_max', 'GR_std_max_excluded'));
+    top_data.graphs.push(new WowSeriesPlot([800, 50, 350, 90], top_data, 'Env_series', 'Env_GR'));
+    top_data.graphs.push(new WowSeriesPlot([800, 190, 350, 90], top_data, 'Env_series', 'Env_DFE_mean'));
+    top_data.graphs.push(new WowImg([0, 310, 100, 400], top_data, 'DFE_graph'));
+    top_data.add_search_filter('Strain', [50, 0, 200, 40], description='Filter by strain:')
+    top_data.add_search_filter('Environment', [265, 0, 200, 40], description='Filter by env:')
+    
     d3.tsv('data/Mut_s_formatted.tsv').then(function(data) {
       mut_s_data = data;
       top_data.svg.selectAll('.mark_on_graph_1')
@@ -577,12 +620,11 @@ function go() {
           let exp = d['Experiment'];
           console.log(exp);
           if (dfe_graph) dfe_graph.kill();
-          let mut_data = new WowData(mut_s_data.filter(function(d) { return d['Experiment'] == exp; }), main_svg);
-          console.log(mut_data);
-          mut_data.add_search_filter('Gene', [125, 650, 200, 50], description='Filter by gene:')
-          mut_data.add_search_filter('Mut', [125, 710, 200, 50], description='Filter by Mut_ID:')
-          
-          dfe_graph = new WowMarkerPlot([100, 350, 250, 250], mut_data, 'Sel_coef', null, color_by=['Environment', env_color],
+          if (mut_data) mut_data.kill();
+          mut_data = new WowData(mut_s_data.filter(function(d) { return d['Experiment'] == exp; }), main_svg);
+          mut_data.add_search_filter('Gene', [150, 650, 250, 50], description='Filter by gene:')
+          mut_data.add_search_filter('Mut', [150, 675, 250, 50], description='Filter by Mut_ID:')
+          dfe_graph = new WowMarkerPlot([175, 350, 250, 250], mut_data, 'Sel_coef', null, color_by=['Environment', env_color],
                                         xrange_given=[-0.2,0.2]);
           dfe_graph.add_title(exp);
           dfe_graph.add_hover_el([0.7,0.9], function(mock_d) { return mock_d['Mut']+" "+mock_d["Gene"]; });
@@ -592,9 +634,12 @@ function go() {
               d3.select(this).classed('clicked_data', true);
               let mut = d['Mut'];
               if (s_x_graph) s_x_graph.kill();
-              let s_x_data = new WowData(mut_s_data.filter(function(d) { return d['Mut'] == mut; }), main_svg);
-              s_x_graph = new WowMarkerPlot([420, 350, 400, 400], s_x_data, 'Avg_GR', 'Sel_coef', color_by=['Environment', env_color],
+              if (s_x_data) s_x_data.kill();
+              s_x_data = new WowData(mut_s_data.filter(function(d) { return d['Mut'] == mut; }), main_svg);
+              s_x_graph = new WowMarkerPlot([525, 350, 300, 315], s_x_data, 'Avg_GR', 'Sel_coef', color_by=['Environment', env_color],
                                             xrange_given=false, yrange_given=[-0.1,0.1]);
+              s_x_data.add_search_filter('Strain', [480, 700, 200, 40], description='Filter by strain:')
+              s_x_data.add_search_filter('Environment', [690, 700, 200, 40], description='Filter by env:')
               s_x_graph.add_hover_el([0.7,0.9], function(mock_d) { return mock_d['Experiment']; });
               s_x_graph.add_title(d['Mut'] + ' ' + d['Gene']);
               s_x_graph.set_pointradius(4);
