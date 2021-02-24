@@ -14,7 +14,7 @@
     
 </head>
 
-<body onload="main_func()">
+<body onload="setup()">
     
 <p3 id="home_link_black"><a href="/">home</a></p3>
 <h1>Muller Diagram Sim</h1>
@@ -43,7 +43,7 @@
     <input class="radio_choose_1" id="do_exp_del" type="checkbox" name="do_exp_del" checked>Exponentially distributed (otherwise fixed)<br />
     Show mutation frequencies: <input class="radio_choose_1" id="show_freqs" type="checkbox" name="show_freqs" value=1 checked>
     </div>
-    <div id="q_submit"><input type="submit" name="submit" value="Submit"><br /></div>
+    <div id="q_submit" onclick="main_func()">GO</div>
 </form>
 
 <div id="muller_div">

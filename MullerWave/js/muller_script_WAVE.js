@@ -738,6 +738,13 @@ function extra_min_max_check(val, mn, mx) {
 }
     
 function main_func() {
+
+    full_pixel_record = [];
+
+    mut_counter = 0;
+    time = 0;
+    fixed_counter = 0;
+    mut_lost_counter = 0;
     
     n = extra_min_max_check(parseFloat(document.getElementById('N_in').value),1,10000000);
     u_ben = extra_min_max_check(parseFloat(document.getElementById('u_ben').value),0,100000) / 1000000;
@@ -767,9 +774,7 @@ function main_func() {
     }
 
     var the_canvas = document.getElementById("muller_pixel_canvas");
-    if (!the_canvas) {
-        alert('no canvas');
-    }
+
     var cc = the_canvas.getContext("2d");
     var width = the_canvas.width;
     if (show_mut_freqs == 0) {
@@ -793,3 +798,4 @@ function main_func() {
     interval(update_sim, 1, id, cc, wave_cc);
 
 }
+

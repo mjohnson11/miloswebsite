@@ -292,6 +292,11 @@ label {
     position:absolute;
     top:90px;
     left:475px;
+    background-color: #CCC;
+}
+
+#q_submit:hover {
+    opacity: 0.6;
 }
 
 .s_exp {
