@@ -63,7 +63,7 @@ strong {
 #big_title {
     position:relative;
     margin:auto;
-    width:600px;
+    font-size: 1.5em;
 }
 
 .line_divider {
@@ -141,7 +141,6 @@ strong {
 
 #project_panel {
     position: relative;
-    width: 100%;
 }
 
 #projects_holder {
