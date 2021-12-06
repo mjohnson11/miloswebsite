@@ -1,5 +1,8 @@
 /* Main stylesheet */
 
+body {
+  background-color: #0F0B07;
+}
 
 #vid_action_container {
   position: relative;

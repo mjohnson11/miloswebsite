@@ -346,6 +346,7 @@ const DrawingObj = {
 var current_col = getRandomColor();
 
 DrawingObj[drawing].example();
+update_drawing(drawing);
 
 the_svg = d3.select('#svg_div')
   .append('svg')

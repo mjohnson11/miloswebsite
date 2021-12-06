@@ -9,18 +9,32 @@ var sensitivity = 1.2;
 
 var radius = 1; //for cluster_score function
 
-var num_colors = 10;
-var color_list = [];
-var color_count_list = []; //just keeps a count of the number of pixels of each kind
+var num_colors = 7;
+var color_lists = [
+    [[46, 134, 171],[104, 97, 143],[162, 59, 114],[241, 143, 1],[199, 62, 29],[129, 47, 36],[59, 31, 43]],
+    [[2, 2, 19],[49, 49, 176],[0, 66, 153],[62, 191, 241],[45, 216, 229],[8, 27, 156],[12, 100, 183]],
+    [[225, 39, 39],[236, 244, 164],[247, 255, 88],[251, 201, 84],[255, 147, 79],[175, 117, 85],[94, 86, 90]],
+    [[15, 11, 7], [32, 32, 32], [45, 45, 45], [64, 64, 64], [84, 84, 84], [128, 128, 128], [192, 192, 192], [221, 221, 221]],
+];
+var rcolors = [];
 for (var i=0; i<num_colors; i++) {
     var r = Math.floor(Math.random()*255);
     var g = Math.floor(Math.random()*255);
     var b = Math.floor(Math.random()*255);
-    color_list.push([r, g, b]);
+    rcolors.push([r, g, b]);
+}
+color_lists.push(rcolors);
+var which_colors = Math.floor(Math.random()*color_lists.length);
+//var which_colors = 1;
+console.log(which_colors);
+var color_list = color_lists[which_colors];
+var color_count_list = []; //just keeps a count of the number of pixels of each kind
+for (var i=0; i<num_colors; i++) {
     color_count_list.push(0);
 }
 
-var wid = 200; //it has to be square and it has to be EVEN
+
+var wid = 260; //it has to be square and it has to be EVEN
 
 var col_array = [];
 
@@ -123,14 +137,13 @@ function change_decision(col, row) {
 
 function change_color(id, cc, column, row, col_index) {
     
-    var new_id = cc.createImageData(1,1);
+    //var new_id = cc.createImageData(1,1);
+    var base_index = row*wid+column;
     //alert('b');
-    new_id.data[0] = color_list[col_index][0];
-    new_id.data[1] = color_list[col_index][1];
-    new_id.data[2] = color_list[col_index][2];
-    new_id.data[3] = 255; //totally opaque
+    id.data[base_index*4] = color_list[col_index][0];
+    id.data[base_index*4+1] = color_list[col_index][1];
+    id.data[base_index*4+2] = color_list[col_index][2];
     
-    cc.putImageData( new_id, row, column );
     //alert('c');
     return id;
 }
@@ -188,7 +201,7 @@ function try_pixel_change(id, cc) {
 
 function update_sim(id, cc) {
   
-    sensitivity = (document.getElementById("sim_param_form").sensitivity.value/30);
+    sensitivity = (document.getElementById("sense_param_form").sensitivity.value/30);
     
     if (aud_obj.status == 'FAIL') {
         audio_level = 100*sensitivity;
@@ -211,12 +224,17 @@ function update_sim(id, cc) {
         try_pixel_change(id, cc, audio_level);
     }
 
+    cc.putImageData( id, 0, 0 );
 }    
     
 function main_func() {
     //At first I'm just going to try to get audio input going here
     //this site seems helpful - http://ianreah.com/2013/02/28/Real-time-analysis-of-streaming-audio-data-with-Web-Audio-API.html
 
+
+    document.getElementById("bottom_stuff").style.display = 'block';
+    document.getElementById("state_div").style.display = 'block';
+    document.getElementById("go_popup").style.display = 'none';
     //AUDIO STUFF
     aud_obj = new AudioInAction(64, after_loaded);
 }

@@ -23,37 +23,43 @@
 
 </head>
 
-<body onload="main_func()">
+<body>
 
-<p3 id="home_link_black"><a href="/">home</a></p3>
+<div id="go_popup">
+    This page requires audio input from the mic.<br /> Click below to enable it.
+    <div id="go_button" onclick="main_func()">BASINS
+    </div>
+</div>
 
-<h1>Basins</h1>
-<div class="line_divider_2"></div>
-<br />
 <div id="state_div">
     <div id="state">
-    	<canvas id="pixel_canvas" width="200px" height="200px">
+    	<canvas id="pixel_canvas" width="260px" height="260px">
     	Canvas is not supported by your browser, sorry
         </canvas>
     </div>
 </div>
 
 <div id="bottom_stuff">
-    <form id=sim_param_form>
-        <p1 id="slider_label">Audio Sensitivity:</p1><br><input id="param_slider" type="range" min=0 max=100 step="1" name="sensitivity" value=40 onchange="SliderUpdate(value, 'param_show')">
+    <form id=sense_param_form>
+        <p1 id="slider_label">Sensitivity:</p1><br><input id="param_slider" type="range" min=0 max=100 step="1" name="sensitivity" value=40 onchange="SliderUpdate(value, 'param_show')" onmousemove="SliderUpdate(value, 'param_show')">
         <output for="param_text" id="param_show">40</output><br>
     </form>
-    <h2>Audio Input Level</h2>
     <div id="volume_meter"></div>
+    <h3 id="about_click" onClick="show_about()">About</h3>
 </div>
 
 <div id="about_div">
-    <p1><b>ONLY WORKS ON FIREFOX AND CHROME CURRENTLY, SORRY SAFARI</b></p1>
-    <h3 id="about_click" onClick="show_about()">About Basins</h3>
+    <p1><b></b></p1>
     <p1 id="about_text">
-        This is a simulation of a system with a huge number of possible states.  Each pixel in the 100 x 100 grid can be any one of 10 colors, so in all there are 10^10000 possibilities.  This simulation proceeds by picking a pixel at random, scoring it, and changing it if its score is lower than the audio input level.  The score is actually a combination of two scores - symmetry score and match score.  The symmetry score is based on how many of the symmetric pixels in the 4 quadrants of the grid are the same color as the pixel in question, and the match score is based on the total percentage of that color in the grid.  Depending on the audio level, certain states are <i>stable</i>, meaning that every pixel's score is greater than the audio level, so no pixels will change.  Increasing the audio level can then "bump" the system out of that stable state and eventually into another one.  Because of the match score, a symmetric grid will be more stable if it is made of fewer colors.  And the most stable state is a grid that is all one color - you'll have to get loud to knock the system out of one of those states.
+        This is a simulation of a system with a huge number of possible states.  Each pixel in the 260 x 260 grid can be any one of 7 colors, so in all there are 7^67600 possibilities.  This simulation proceeds by picking a pixel at random, scoring it, and changing it if its score is lower than the audio input level.  The score is actually a combination of two scores - symmetry score and match score.  The symmetry score is based on how many of the symmetric pixels in the 4 quadrants of the grid are the same color as the pixel in question, and the match score is based on the total percentage of that color in the grid.  Depending on the audio level, certain states are <i>stable</i>, meaning that every pixel's score is greater than the audio level, so no pixels will change.  Increasing the audio level can then "bump" the system out of that stable state and eventually into another one.  Because of the match score, a symmetric grid will be more stable if it is made of fewer colors.  And the most stable state is a grid that is all one color - you'll have to get loud to knock the system out of one of those states.
         <br /><br />
         The point of the simulation is to think about the dynamics of systems with multiple stable states and the "basins of attraction" that drain into these states.  If the grid is 90% one color it is almost certainly in the basin of attraction of the stable state where the grid is 100% that color.  And stable states that are less stable can be inside the basin of attraction for a more stable state.  I think I might be talking in circles now, but hopefully you can get the idea by playing with the system.  It's interesting to think about how early random changes might constrain the system to "go" a certain direction - to end up in some basin of attraction, with no way to go backwards unless there is a big input of energy (sound in this case).
+        <br /><br />
+        <b>A challenge: try to get it to be just one color.</b>
+        <br /><br />
+        Try playing your favorite song on your computer speakers!
+        <br /><br />
+        ONLY WORKS ON FIREFOX AND CHROME CURRENTLY, SORRY SAFARI.
         <br /><br />
     </p1>
 </div>
