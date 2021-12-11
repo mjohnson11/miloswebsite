@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176166415-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176166415-1');
+</script>
+<link rel='stylesheet' href='/css/front_page.css' />
+
+<title>Milo Johnson's Website</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body class='dark_page' style='padding-left:5%;padding-right:5%'>
+
+<h1>WHOOCKLE</h1>
+<h2>A tool for processing SARS-CoV-2 qPCR data, created for the Harvard University Clinical Lab (HUCL)</h2>
+<h3>Currently being used to process data from ~40,000 tests a week!</h3>
+
+<div class="whoockle_line_divider"></div>
+
+<video width=800 controls autoplay muted style='max-width:100%'>
+  <source src='demo_vid.mov'type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<p>Early in 2021, Harvard's high-throughput Covid testing lab was setting up their testing protocols and were looking for a better version of the built-in qPCR analysis software. Working with the lab, I designed an electron app using javascript and D3 to visualize the data (384 qPCR curves along with their associated CT values). The app allows technicians to quickly examine samples whose CT values are associated with an particular results like "Rerun" or "Positive", highlight samples that need to be retested (and then mark them done using barcode scanner input), and export data to be processed by the test reporting pipeline. It runs as a desktop app and communicates with the server holding past results (in order to determine if a sample is being re-tested).</p>
+
+
+</body>
+
+</html>
