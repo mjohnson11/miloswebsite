@@ -38,7 +38,14 @@ a:hover {
     opacity:0.8;
 }
 
-#twitter_link {
+#about_me_panel {
+    max-width:1000px;
+    margin:auto;
+    margin-bottom:20px;
+    color:#DDD;
+}
+
+.social_link {
     color: #DDD;
 }
 
